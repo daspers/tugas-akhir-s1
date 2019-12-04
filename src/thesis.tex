@@ -46,8 +46,11 @@
     \titleformat*{\section}{\centering\bfseries\Large\MakeUpperCase}
 
     \tableofcontents
+    \addcontentsline{toc}{chapter}{\contentsname}
     \listoffigures
+    \addcontentsline{toc}{chapter}{\listfigurename}
     \listoftables
+    \addcontentsline{toc}{chapter}{\listtablename}
 
     \titleformat*{\section}{\bfseries\Large}
     \pagenumbering{arabic}
@@ -72,7 +75,9 @@
     %----------------------------------------------------------------%
 
     % Daftar pustaka
-    \printbibliography
+    \nocite{*}
+    \printbibliography[title=Daftar Pustaka]
+    \addcontentsline{toc}{chapter}{Daftar Pustaka}
 
     % Index
     % \appendix
