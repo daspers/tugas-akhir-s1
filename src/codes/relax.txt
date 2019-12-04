@@ -1,0 +1,4 @@
+function relax(u, v, D, P, cost)
+    if D(v) > D(u) + cost then
+       D(v) = D(u) + cost
+       P(v) = u

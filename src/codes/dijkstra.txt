@@ -1,0 +1,9 @@
+function Djikstra(G, D, P, s)
+  init-single-source(G, D, P, s)
+  U = {}
+  V = G.V
+  while V is not empty
+    a = extract-min(V)
+    V = V $\cup$ {a}
+    for each edge(a, v) in graph G
+      relax(a, v, D, P, G.W(edge(a, v)))

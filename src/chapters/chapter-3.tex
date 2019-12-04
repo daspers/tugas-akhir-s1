@@ -1,10 +1,33 @@
-\chapter{Analisis dan Perancangan}
+\chapter{Definisi Masalah Dan Rancangan Algoritma Pencarian Rute Optional}
 
-\section{Analisis Masalah}
-\blindtext
+\section{Definisi Formal Permasalahan}
 
-\section{Solusi Umum}
-\blindtext
+Diberikan suatu graf berarah dan berbobot $G$ yang memiliki himpunan simpul $V(G)$, himpunan sisi $E(G)$, dan himpunan bobot $W(E(G))$ yang merupakan 
+bobot pada tiap sisi di $G$. Diberikan juga $n$ buah pesanan $P$ yang tiap pesanan $pi$ untuk $1 \leq i \leq n$ berupa \textit{tuple} $(a_{i}, b_{i}, w_{i})$, 
+dimana $a_{i}$ dan $b_{i}$ merupakan simpul pada graf $G$, $a_{i}$ adalah simpul tempat pengambilan barang pesanan ke-$i$, $b_{i}$ adalah simpul tempat penurunan 
+barang pesanan ke-$i$, dan $w_{i}$ adalah ukuran barang yang akan diantar pada pesanan ke-$i$. Penyimpanan truk memiliki sifat yang sama dengan struktur data \textit{stack} 
+dan mempunyai kapasitas maksimal $M$.
 
-\section{Rancangan Solusi}
-\blindtext
+Dari info yang diberikan, masalah yang akan dicari adalah sebuah jalur yang akan dilewati truk, yang memenuhi syarat berikut:
+\begin{enumerate}
+    \item Penurunan barang pada pesanan $p_{i}$ hanya dapat dilakukan setelah barang pada pesanan $p_{i}$ diambil.
+    \item Barang yang hanya dapat diturunkan jika berada pada atas penyimpanan.
+    \item Jumlah ukuran barang yang terdapat pada penyimpanan tidak melebihi kapasitas truk, yaitu $M$.
+\end{enumerate}
+
+Pencarian rute tersebut memiliki objektif, yaitu jumlah bobot sisi-sisi yang dilalui pada jalur tersebut minimal.
+
+\section{Rancangan Solusi 1}
+
+Untuk menyelesaikan persoalan tersebut, hal yang perlu diperhatikan adalah simpul-simpul tempat pengambilan dan penurunan barang, sehingga graf $G$ 
+dapat direduksi menjadi graf $G’$, yang mana simpul-simpul pada graf $G’$ memuat simpul-simpul tempat pengambilan barang dan penurunan barang serta 
+sisi-sisi pada simpul tersebut adalah jalur terpendek antar tiap simpul pada graf $G’$.
+
+Hal pertama yang dilakukan adalah menghitung jalur terpendek, yaitu:
+\begin{enumerate}
+    \item Jalur terpendek dari simpul tempat pengambilan barang ke simpul tempat pengambilan barang lain.
+    \item Jalur terpendek dari simpul tempat pengambilan barang ke simpul tempat penurunan barang.
+    \item Jalur terpendek dari simpul tempat penurunan barang ke simpul tempat penurunan barang lain.
+\end{enumerate}
+
+Setelah mendapatkan informasi diatas, akan dilakukan pencarian jalur terpendek sehingga semua pesanan 

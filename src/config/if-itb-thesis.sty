@@ -17,9 +17,25 @@
 \usepackage[top=3cm,bottom=2.5cm,left=4cm,right=2.5cm]{geometry}
 
 \usepackage{mathptmx}
+\usepackage{amsmath}
+
 
 % Judul bahasa Indonesia
 \usepackage[bahasa]{babel}
+
+% section kode
+\usepackage{listings}
+\lstdefinestyle{customc}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=single,
+  xleftmargin=\parindent,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  numbers=left,
+  numberstyle=\small,
+  numbersep=8pt,
+}
 
 % Format citation
 \usepackage[backend=bibtex,citestyle=authoryear]{biblatex}
