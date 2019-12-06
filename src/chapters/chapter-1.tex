@@ -23,7 +23,6 @@ disimbolkan dengan $P2$, terletak pada simpul $2$ dan \textit{drop off}, yang di
 Pada umumnya kedua pesanan tersebut dilayani secara terpisah, contohnya pesanan satu memiliki rute $1-4-5-6$
 yang memiliki \textit{cost} sebesar $3$ dan pesanan dua memiliki rute $2-3$ dengan \textit{cost} sebesar $1$.
 
-
 \begin{figure}[h]
     \centering
     \includegraphics[width=1.0\textwidth]{resources/graph_routes.png}
@@ -40,12 +39,17 @@ dan menurunkan barang pesanan ke-2. Terakhir, truk menuju simpul 6  untuk melaku
     \caption{Graf yang memiliki rute optimal 1-2-3-6.}
 \end{figure}
 
-\section{Tujuan}
+\section{Rumusan Masalah}
 
-Berdasarkan latar belakang pada subbab I.1, dapat dibentuk rumusan masalah sebagai berikut:
+Berdasarkan latar belakang pada subbab I.1, untuk menangani sebuah pesanan, dilakukan tepat 
+sekali \textit{pickup} dan \textit{drop off}, namun telah ditunjukkan juga bahwa cara tersebut 
+tidak selalu efisien dalam menangani banyak pesanan. 
+Dari uraian tersebut, dapat dibentuk rumusan masalah sebagai berikut.
 
 \begin{enumerate}
-    \item Bagaimana algoritma yang efisien untuk menentukan rute terbaik agar satu atau lebih pesanan dapat diselesaikan dalam sebuah rute pengantaran dengan sumber daya yang terbatas.
+    % \item Bagaimana algoritma yang efisien untuk menentukan rute terbaik agar satu atau lebih pesanan dapat diselesaikan dalam sebuah rute pengantaran dengan sumber daya yang terbatas.
+    \item Apa indikator suatu rute pengantaran, sehingga dapat dibandingkan dengan rute pengantaran lainnya.
+    \item Bagaimana cara untuk menentukan rute pengantaran yang efisien.
 \end{enumerate}
 
 \section{Tujuan}
@@ -53,7 +57,8 @@ Berdasarkan latar belakang pada subbab I.1, dapat dibentuk rumusan masalah sebag
 Berikut adalah tujuan yang ingin dicapai dalam penulisan tugas akhir ini:
 
 \begin{enumerate}
-    \item Algoritma yang efisien untuk menentukan rute terbaik agar satu atau lebih pesanan dapat diselesaikan dalam sebuah rute pengantaran dengan sumber daya yang terbatas.
+    \item Mengetahui indikator yang mengukur suatu rute pengantaran.
+    \item Algoritma untuk menentukan rute terbaik agar satu atau lebih pesanan dapat diselesaikan dalam sebuah rute pengantaran dengan sumber daya yang terbatas.
 \end{enumerate}
 
 \section{Batasan Masalah}
@@ -61,13 +66,13 @@ Berikut adalah tujuan yang ingin dicapai dalam penulisan tugas akhir ini:
 Berikut adalah batasan-batasan masalah yang perlu diperhatikan:
 
 \begin{enumerate}
-    \item Truk memiliki kapasitas maksimal, yang merupakan bilangan bulat positif.
-    \item Tiap pesanan memiliki cost bernilai bilangan bulat positif yang akan memakan kapasitas truk.
-    \item Penyimpanan truk bersifat LIFO atau last in first out.
+    % \item Truk memiliki kapasitas maksimal, yang merupakan bilangan bulat positif.
+    % \item Tiap pesanan memiliki cost bernilai bilangan bulat positif yang akan memakan kapasitas truk.
+    % \item Penyimpanan truk bersifat LIFO atau last in first out.
     \item Selalu ada rute yang valid untuk setiap pesanan.
-    \item Truk dapat melakukan pengiriman setelah pengambilan barang.
-    \item Truk dapat melakukan pengambilan barang dan pengiriman kapan saja.
-    \item Daftar pickup dan drop off sudah terdefinisi sebelum ditentukan rute truk.
+    \item Truk dapat melakukan \textit{drop off} suatu barang hanya setelah melakukan \textit{pickup}.
+    % \item Truk dapat melakukan pengambilan barang dan pengiriman kapan saja.
+    \item Daftar pickup dan \textit{drop off} sudah terdefinisi sebelum ditentukan rute truk.
 \end{enumerate}
 
 \section{Metodologi}
