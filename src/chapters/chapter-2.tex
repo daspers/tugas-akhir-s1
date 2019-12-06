@@ -1,5 +1,25 @@
 \chapter{Studi Literatur}
 
+\section{\textit{Stack}}
+
+\textit{Stack} adalah suatu struktur data dinamis yang mengikuti aturan \textit{LIFO} (\textit{Last In, First Out}) dalam melakukan operasinya. 
+Terdapat tiga operasi pada struktur data ini, yaitu \textit{top}, \textit{push} (\textit{insert}), dan \textit{pop} (\textit{delete}).
+Operasi \textit{top} mendapatkan \textit{index} atau posisi dari elemen terakhir yang ditambahkan, \textit{push} 
+menambahkan elemen ke \textit{stack}, dan \textit{pop} menghapus elemen yang paling terakhir ditambahkan.
+
+Misalkan elemen pada \textit{stack} tersusun atas S[1, 2, ..., S.top], dimana S[1] merupakan elemen yang berada pada \textit{bottom} dari \textit{stack}
+dan S[S.top] adalah elemen teratas dari \textit{stack}. \textit{Stack} kosong ketika S.top bernilai 0. \textit{Pseudocode} dari 
+operasi struktur data \textit{stack} adalah sebagai berikut.
+
+\medskip
+\lstinputlisting[style=customc]{codes/stack-top.txt}
+\medskip
+\lstinputlisting[style=customc]{codes/stack-empty.txt}
+\medskip
+\lstinputlisting[style=customc]{codes/stack-push.txt}
+\medskip
+\lstinputlisting[style=customc]{codes/stack-pop.txt}
+
 \section{Graf}
 
 Graf adalah struktur diskrit yang terdiri atas simpul dan sisi yang menghubungkan simpul-simpul tersebut. Graf $G$ dapat didefinisikan sebagai sebuah \textit{tuple} yang 
@@ -12,7 +32,6 @@ dapat di representasikan dengan $e (u, v)$ yang mana sisi $e$ memiliki arah dan 
 simpul $u$ dan simpul $v$ serta arah dari sisi tersebut adalah dari $u$ ke $v$. Dengan menggunakan 
 sisi tersebut dari simpul $u$ dapat menuju simpul $v$, namun tidak sebaliknya. Graf yang setiap sisi-sisinya 
 tidak memiliki arah disebut dengan graf tak berarah.
-
 
 \section{Jalur}
 

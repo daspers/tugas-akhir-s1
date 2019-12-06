@@ -1,0 +1,5 @@
+function is-empty(S)
+    if S.top == 0 then
+        return true
+    else
+        return false
