@@ -45,12 +45,18 @@
 
     \titleformat*{\section}{\centering\bfseries\Large\MakeUpperCase}
 
-    \tableofcontents
+    \newpage
+    \phantomsection
     \addcontentsline{toc}{chapter}{\contentsname}
-    \listoffigures
+    \tableofcontents
+    \newpage
+    \phantomsection
     \addcontentsline{toc}{chapter}{\listfigurename}
-    \listoftables
+    \listoffigures
+    \newpage
+    \phantomsection
     \addcontentsline{toc}{chapter}{\listtablename}
+    \listoftables
     \clearpage
 
     \titleformat*{\section}{\bfseries\normalsize}
