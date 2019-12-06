@@ -51,14 +51,15 @@
     \addcontentsline{toc}{chapter}{\listfigurename}
     \listoftables
     \addcontentsline{toc}{chapter}{\listtablename}
+    \clearpage
 
     \titleformat*{\section}{\bfseries\Large}
-    \pagenumbering{arabic}
 
     %----------------------------------------------------------------%
     % Konfigurasi Bab
     %----------------------------------------------------------------%
-    \setcounter{page}{0}
+    \pagenumbering{arabic}
+    \setcounter{page}{1}
     \renewcommand{\chaptername}{BAB}
     \renewcommand{\thechapter}{\Roman{chapter}}
     %----------------------------------------------------------------%
