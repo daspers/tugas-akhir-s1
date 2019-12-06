@@ -3,34 +3,37 @@
 \section{Definisi Formal Permasalahan}
 
 Diberikan suatu graf berarah dan berbobot $G$ yang memiliki himpunan simpul $V(G)$, himpunan sisi $E(G)$, dan himpunan bobot $W(E(G))$ yang merupakan 
-bobot pada tiap sisi di $G$. Diberikan juga $n$ buah pesanan $P$ yang tiap pesanan $pi$ untuk $1 \leq i \leq n$ berupa \textit{tuple} $(a_{i}, b_{i}, w_{i})$, 
+bobot pada tiap sisi di $G$. Diberikan juga $n$ buah pesanan $P$ yang tiap pesanan $pi$ untuk $1 \leq i \leq n$ berupa \textit{tuple} $(a_{i}, b_{i}, c_{i})$, 
 dimana $a_{i}$ dan $b_{i}$ merupakan simpul pada graf $G$, $a_{i}$ adalah simpul tempat pengambilan barang pesanan ke-$i$, $b_{i}$ adalah simpul tempat penurunan 
-barang pesanan ke-$i$, dan $w_{i}$ adalah ukuran barang yang akan diantar pada pesanan ke-$i$. Penyimpanan truk memiliki sifat yang sama dengan struktur data \textit{stack} 
-dan mempunyai kapasitas maksimal $M$.
+barang pesanan ke-$i$, dan $c_{i}$ adalah ukuran barang yang akan diantar pada pesanan ke-$i$. Terdapat m buah truk yang dapat digunakan untuk melakukan pengantaran.
+Penyimpanan truk memiliki sifat yang sama dengan struktur data \textit{stack}. Setiap truk memiliki kapasitas maksimum penyimpanan 
+berupa bilangan bulat positif yang mana untuk truk ke-$i$, kapasitas maksimumnya dilambangkan dengan $Ci$ .
 
 Dari info yang diberikan, masalah yang akan dicari adalah sebuah jalur yang akan dilewati truk, yang memenuhi syarat berikut:
 \begin{enumerate}
-    \item Truk memiliki kapasitas maksimal $M$, yang merupakan bilangan bulat positif.
-    \item Tiap pesanan memiliki cost bernilai bilangan bulat positif yang akan memakan kapasitas truk.
-    \item Penyimpanan truk bersifat LIFO atau last in first out.
+    \item Setiap bobot dari sisi pada graf $G$ adalah bilangan bulat positif.
+    \item Setiap pesanan memiliki \textit{cost} $c_{i}$ bernilai bilangan bulat positif yang akan memakan kapasitas truk.
+    \item Penyimpanan truk bersifat LIFO atau \textit{last in, first out}.
     \item Penurunan barang pada pesanan $p_{i}$ hanya dapat dilakukan setelah barang pada pesanan $p_{i}$ diambil.
-    \item Barang yang hanya dapat diturunkan jika berada pada atas penyimpanan.
-    \item Jumlah ukuran barang yang terdapat pada penyimpanan tidak melebihi kapasitas truk, yaitu $M$.
+    \item Barang yang hanya dapat diturunkan hanya jika berada pada atas penyimpanan.
+    \item Jumlah ukuran barang yang terdapat pada penyimpanan suatu truk tidak melebihi kapasitasnya.
 \end{enumerate}
 
-Pencarian rute tersebut memiliki objektif, yaitu jumlah bobot sisi-sisi yang dilalui pada jalur tersebut minimal.
+Indikator pengukuran dari suatu rute adalah jumlah bobot dari sisi-sisi yang dilalui oleh semua truk yang akan dilambangkan dengan $T$. 
+Pencarian rute tersebut memiliki objektif, yaitu meminimalkan nilai dari $T$.
 
 \section{Rancangan Algoritma 1}
+
+% NAIVE
 
 Untuk menyelesaikan persoalan tersebut, hal yang perlu diperhatikan adalah simpul-simpul tempat pengambilan dan penurunan barang, sehingga graf $G$ 
 dapat direduksi menjadi graf $G’$, yang mana simpul-simpul pada graf $G’$ memuat simpul-simpul tempat pengambilan barang dan penurunan barang serta 
 sisi-sisi pada simpul tersebut adalah jalur terpendek antar tiap simpul pada graf $G’$.
 
-Hal pertama yang dilakukan adalah menghitung jalur terpendek, yaitu:
-\begin{enumerate}
-    \item Jalur terpendek dari simpul tempat pengambilan barang ke simpul tempat pengambilan barang lain.
-    \item Jalur terpendek dari simpul tempat pengambilan barang ke simpul tempat penurunan barang.
-    \item Jalur terpendek dari simpul tempat penurunan barang ke simpul tempat penurunan barang lain.
-\end{enumerate}
+Sisi-sisi dari graf $G’$ adalah jalur terpendek antara tiap dua simpul pada graf G'. 
+Perhitungan jalur terpendek ini menggunakan sisi-sisi dari graf $G$, sehingga untuk menghitung semua sisi-sisi pada 
+graf $G$ dengan menggunakan algoritma pencarian jalur terpendek untuk tiap dua pasang seperti algoritma Floyd-Warshall 
+dengan kompleksitas waktu $O(|G.V|^{3})$ atau 
+menggunakan algoritma Dijkstra untuk simpul-simpul pada graf $G'$ dengan kompleksitas waktu $O(|G'.V| * (|G.V| + |G.E|) * \log |G.V|)$.
 
-Setelah mendapatkan informasi diatas, akan dilakukan pencarian jalur terpendek sehingga semua pesanan 
+Setelah mendapatkan informasi diatas, akan dilakukan pencarian jalur terpendek sehingga semua pesanan dengan cara sebagai berikut.

@@ -2,20 +2,21 @@
 
 \section{Graf}
 
-Graf adalah struktur diskrit yang terdiri atas simpul dan sisi yang menghubungkan simpul-simpul tersebut. Graf $G$ dapat didefinisikan sebagai sebuah tuple yang 
+Graf adalah struktur diskrit yang terdiri atas simpul dan sisi yang menghubungkan simpul-simpul tersebut. Graf $G$ dapat didefinisikan sebagai sebuah \textit{tuple} yang 
 terdiri atas himpunan simpul $V(G)$, himpunan sisi $E(G)$, dan himpunan relasi yang menghubungkan antara tepat dua buah simpul dan tepat sebuah sisi. Titik ujung dari suatu sisi 
 adalah dua buah simpul yang terhubung pada sisi tersebut. Cincin adalah sisi yang kedua simpul di ujungnya sama. Graf disebut sederhana jika tidak memiliki lebih 
 dari satu sisi yang menghubungkan pasangan simpul berbeda yang sama dan tidak memiliki cincin. Graf berbobot adalah graf yang setiap sisi-sisinya memiliki bobot atau nilai.
 
-Graf berarah adalah graf yang tiap sisi-sisinya dikaitkan dengan suatu arah. Graf berarah dapat didefinisikan sebagai sebuah tuple yang terdiri atas 
-himpunan simpul $V(G)$, Misalkan suatu sisi $e$ merupakan sisi yang memiliki arah dan menghubungkan simpul $u$ dan simpul $v$ serta arah dari sisi tersebut 
-adalah $u$ ke $v$. Dengan menggunakan sisi tersebut simpul $u$ dapat menuju simpul $v$ namun tidak sebaliknya. Graf yang tiap sisi-sisinya tidak memiliki 
-arah disebut dengan graf tak berarah. Sebuah graf tak berarah $G$ dikatakan terhubung jika terdapat setidaknya sebuah jalur tiap dua buah simpul pada graf.
+Graf berarah adalah graf yang setiap sisi-sisinya dikaitkan dengan suatu arah. Sisi pada graf berarah 
+dapat di representasikan dengan $e (u, v)$ yang mana sisi $e$ memiliki arah dan menghubungkan 
+simpul $u$ dan simpul $v$ serta arah dari sisi tersebut adalah dari $u$ ke $v$. Dengan menggunakan 
+sisi tersebut dari simpul $u$ dapat menuju simpul $v$, namun tidak sebaliknya. Graf yang setiap sisi-sisinya 
+tidak memiliki arah disebut dengan graf tak berarah.
 
 
 \section{Jalur}
 
-Jalur dapat didefinisikan sebagai berikut, misalkan $n$ merupakan bilangan bulat tak negatif dan $G$ merupakan suatu graf. Sebuah jalur dengan 
+Jalur dapat didefinisikan sebagai berikut. Misalkan $n$ merupakan bilangan bulat tak negatif dan $G$ merupakan suatu graf. Sebuah jalur dengan 
 panjang $n$ dari simpul $u$ ke simpul $v$ adalah rangkaian yang tersusun atas $n$ buah sisi $e_{1}, e_{2}, ..., e_{n}$ yang mana untuk setiap $1 \leq i \leq n$, $e_{i}$ merupakan sisi 
 di $G$ dan sisi $e_{i}$ menghubungkan simpul $v_{i-1}$ dengan simpul $v_{i}$ serta $x_{0} = u$ dan $x_{n} = v$. Singkatnya, jalur adalah rangkaian dari sisi-sisi yang dimulai dari 
 suatu simpul dan bergerak dari simpul ke simpul yang terhubung dengan sisi pada graf. Suatu jalur yang dimulai dan diakhiri pada simpul yang sama disebut 
@@ -98,8 +99,8 @@ Dalam menentukan jalur terpendek maupun panjang jalur terpendek, terdapat bebera
 
         \begin{enumerate}
             \item Jika $k$ bukan simpul intermediate dari $p$, maka simpul-simpul intermediate dari $p$ adalah $R’ = {1, 2, ..., k-1}$.
-            \item Jika $k$ adalah simpul intermediate dari $p$, jalur terpendek $p$ dapat didekomposisi menjadi jalur terpendek $p1$ dari $i$ ke $k$ 
-            dan jalur terpendek $p2$ dari $k$ ke $j$. Simpul-simpul intermediate dari $p1$ dan $p2$ adalah dari $R’ = {1, 2, ..., k-1}$.
+            \item Jika $k$ adalah simpul intermediate dari $p$, jalur terpendek $p$ dapat didekomposisi menjadi jalur terpendek $p^{(1)}$ dari $i$ ke $k$ 
+            dan jalur terpendek $p^{(2)}$ dari $k$ ke $j$. Simpul-simpul intermediate dari $p^{(1)}$ dan $p^{(2)}$ adalah dari $R’ = {1, 2, ..., k-1}$.
         \end{enumerate}
 
         Ketika $k$ bernilai 0, tidak ada simpul \textit{intermediate} pada $p$. Dari observasi di atas, dapat dibuat relasi rekurens untuk menghitung jalur terpendek dari $p$, yaitu
