@@ -1,2 +1,5 @@
 function top(S)
-    return S[S.top]
+    if is-empty(S)
+        return NULL
+    else
+        return S[S.top]

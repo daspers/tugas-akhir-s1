@@ -24,16 +24,10 @@ Pencarian rute tersebut memiliki objektif, yaitu meminimalkan nilai dari $T$.
 
 \section{Rancangan Algoritma 1}
 
-% NAIVE
+Untuk menyelesaikan persoalan tersebut, hal yang perlu diperhatikan hanyalah simpul-simpul tempat pengambilan dan penurunan barang, sehingga graf $G$ 
+dapat direduksi menjadi graf $G’$, yang mana simpul-simpul pada graf $G’$ memuat simpul-simpul tempat pengambilan barang dan penurunan barang.
+Sisi-sisi dari graf $G’$ adalah jalur terpendek antara tiap dua simpul pada graf $G'$. 
+Perhitungan jalur terpendek ini menggunakan sisi-sisi yang berasal dari graf $G$.
 
-Untuk menyelesaikan persoalan tersebut, hal yang perlu diperhatikan adalah simpul-simpul tempat pengambilan dan penurunan barang, sehingga graf $G$ 
-dapat direduksi menjadi graf $G’$, yang mana simpul-simpul pada graf $G’$ memuat simpul-simpul tempat pengambilan barang dan penurunan barang serta 
-sisi-sisi pada simpul tersebut adalah jalur terpendek antar tiap simpul pada graf $G’$.
-
-Sisi-sisi dari graf $G’$ adalah jalur terpendek antara tiap dua simpul pada graf G'. 
-Perhitungan jalur terpendek ini menggunakan sisi-sisi dari graf $G$, sehingga untuk menghitung semua sisi-sisi pada 
-graf $G$ dengan menggunakan algoritma pencarian jalur terpendek untuk tiap dua pasang seperti algoritma Floyd-Warshall 
-dengan kompleksitas waktu $O(|G.V|^{3})$ atau 
-menggunakan algoritma Dijkstra untuk simpul-simpul pada graf $G'$ dengan kompleksitas waktu $O(|G'.V| * (|G.V| + |G.E|) * \log |G.V|)$.
-
-Setelah mendapatkan informasi diatas, akan dilakukan pencarian jalur terpendek sehingga semua pesanan dengan cara sebagai berikut.
+Selanjutnya, hal yang dicari adalah suatu jalur yang memiliki panjang minimal dan memenuhi syarat-syarat dari permasalahan diatas.
+Pencarian rute optimal akan dilakukan dengan Untuk setiap simpul \textit{pickup}, dilakukan $backtrack$ yang dimulai dari simpul tersebut.
