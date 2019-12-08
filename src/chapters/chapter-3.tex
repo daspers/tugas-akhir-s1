@@ -5,11 +5,11 @@
 Diberikan suatu graf berarah dan berbobot $G$ yang memiliki himpunan simpul $V(G)$, himpunan sisi $E(G)$, dan himpunan bobot $W(E(G))$ yang merupakan 
 bobot pada tiap sisi di $G$. Diberikan juga $n$ buah pesanan $P$ yang tiap pesanan $pi$ untuk $1 \leq i \leq n$ berupa \textit{tuple} $(a_{i}, b_{i}, c_{i})$, 
 dimana $a_{i}$ dan $b_{i}$ merupakan simpul pada graf $G$, $a_{i}$ adalah simpul tempat pengambilan barang pesanan ke-$i$, $b_{i}$ adalah simpul tempat penurunan 
-barang pesanan ke-$i$, dan $c_{i}$ adalah ukuran barang yang akan diantar pada pesanan ke-$i$. Terdapat m buah truk yang dapat digunakan untuk melakukan pengantaran.
-Penyimpanan truk memiliki sifat yang sama dengan struktur data \textit{stack}. Setiap truk memiliki kapasitas maksimum penyimpanan 
-berupa bilangan bulat positif yang mana untuk truk ke-$i$, kapasitas maksimumnya dilambangkan dengan $Ci$ .
+barang pesanan ke-$i$, dan $c_{i}$ adalah ukuran barang yang akan diantar pada pesanan ke-$i$. Terdapat sebuah truk yang dapat digunakan untuk melakukan pengantaran.
+Penyimpanan truk memiliki sifat yang sama dengan struktur data \textit{stack}. Truk memiliki kapasitas maksimum penyimpanan 
+berupa bilangan bulat positif yang dilambangkan dengan $C$ .
 
-Dari info yang diberikan, masalah yang akan dicari adalah sebuah jalur yang akan dilewati truk, yang memenuhi syarat berikut:
+Dari info yang diberikan, masalah yang ingin diselesaikan adalah sebuah jalur yang akan dilewati truk, yang memenuhi syarat berikut:
 \begin{enumerate}
     \item Setiap bobot dari sisi pada graf $G$ adalah bilangan bulat positif.
     \item Setiap pesanan memiliki \textit{cost} $c_{i}$ bernilai bilangan bulat positif yang akan memakan kapasitas truk.
@@ -24,10 +24,20 @@ Pencarian rute tersebut memiliki objektif, yaitu meminimalkan nilai dari $T$.
 
 \section{Rancangan Algoritma 1}
 
-Untuk menyelesaikan persoalan tersebut, hal yang perlu diperhatikan hanyalah simpul-simpul tempat pengambilan dan penurunan barang, sehingga graf $G$ 
-dapat direduksi menjadi graf $G’$, yang mana simpul-simpul pada graf $G’$ memuat simpul-simpul tempat pengambilan barang dan penurunan barang.
+Dalam menyelesaikan persoalan tersebut, hal yang perlu diperhatikan hanyalah simpul-simpul \textit{pickup} dan \textit{drop off} pesanan, sehingga graf $G$ 
+dapat direduksi menjadi graf $G’$, yang mana simpul-simpul pada graf $G’$ memuat simpul-simpul tempat \textit{pickup} barang dan \textit{drop off} barang.
 Sisi-sisi dari graf $G’$ adalah jalur terpendek antara tiap dua simpul pada graf $G'$. 
 Perhitungan jalur terpendek ini menggunakan sisi-sisi yang berasal dari graf $G$.
 
 Selanjutnya, hal yang dicari adalah suatu jalur yang memiliki panjang minimal dan memenuhi syarat-syarat dari permasalahan diatas.
-Pencarian rute optimal akan dilakukan dengan Untuk setiap simpul \textit{pickup}, dilakukan $backtrack$ yang dimulai dari simpul tersebut.
+Pencarian rute optimal akan dilakukan dengan menggunakan \textit{backtracking} yang dimulai dari setiap simpul \textit{pickup}. 
+Algoritma ini menyimpan barang yang berada dalam truk pada struktur data \textit{stack}. Misalkan $S$ adalah simpul-simpul tempat \textit{pickup}.
+Dalam melakukan \textit{backtracking}, jika terdapat barang pesanan dalam truk, algoritma ini akan mencoba menelusuri 
+kemungkinan jalur ketika melakukan \textit{drop off} barang terakhir pada \textit{stack}. Ketika masih terdapat simpul 
+\textit{pickup} pada $S$ dan kapasitas dari truk masih mencukupi,
+algoritma ini juga akan mencoba kemungkinan dari setiap simpul pada $S$. Jika mengambil simpul dari $S$, 
+maka simpul \textit{drop off}-nya akan ditambahkan ke stack. Terakhir, ketika tidak ada lagi simpul pada $S$ dan
+\textit{stack} kosong, maka algoritma ini akan membandingkan mana jalur yang paling baik. Berikut adalah \textit{pseodocode} dari rancangan algoritma 1.
+
+\medskip
+\lstinputlisting[style=customc]{codes/ra1.txt}

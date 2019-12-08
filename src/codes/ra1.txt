@@ -1,0 +1,31 @@
+best-path = []
+
+function solve(G, P, C)
+    G'.V = unique vertices from P.a $\cup$ P.b
+    for each diferent pair(x, y) from G'.V
+        if y is reachable from x in graph G then
+            G'.E add edge(x, y)
+            G'.W(edge(x, y)) = shortest path from x to y in graph G
+    back-track-best-path(G', P, st, [], C)
+    return best-path
+
+function back-track-best-path(G, S, st, path, C)
+    if S is empty and st is empty then
+        if sum of all edge weights in path less than best-path then
+            best-path = path
+        return
+    for each (a, b, w) in S
+        if w >= C then
+            S = S - {(a, b, c)}
+            push (b, c) to st
+            append a to path
+            back-track-best-path(G, S, st, path, C-c)
+            remove last vertex from path
+            pop (b, c) from st
+            S = S + {(a, b, c)}
+    if stack st is not empty then
+            (b, c) = pop from st
+            append b to path
+            back-track-best-path(G, S, st, path, C+c)
+            remove last vertex from path
+            push (b, c) to st
