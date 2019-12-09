@@ -69,6 +69,11 @@
     \setcounter{page}{1}
     \renewcommand{\chaptername}{BAB}
     \renewcommand{\thechapter}{\Roman{chapter}}
+
+    \counterwithout{figure}{section}
+    \counterwithout{table}{section}
+    \renewcommand{\thefigure}{\Roman{chapter}.\arabic{figure}}
+    \renewcommand{\thetable}{\Roman{chapter}.\arabic{table}}
     %----------------------------------------------------------------%
 
     %----------------------------------------------------------------%
