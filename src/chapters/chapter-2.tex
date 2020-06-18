@@ -79,35 +79,35 @@ Panjang dari jalur pada graf berbobot adalah jumlah bobot dari sisi yang dilewat
 Menjelajahi graf adalah suatu proses untuk mengunjungi setiap simpul pada suatu graf. 
 Berikut adalah algoritma-algoritma yang sering digunakan untuk menjelajahi graf.
 
-    \subsection{\textit{Breadth-First Search}}
-    Misalkan terdapat sebuah graf $G = (V, E)$ dan sebuah simpul awal $s$. Algoritma ini 
-    melakukan penjelajahan secara melebar pada setiap \textit{level}. Pertama-tama 
-    algoritma ini mengunjungi simpul awal $s$ sebagai simpul pada \textit{level} ke-0. 
-    Lalu, setiap simpul yang yang bersebelahan dengan simpul $s$ akan menjadi 
-    simpul-simpul pada \textit{level} ke-1 dan algoritma ini akan mengunjungi 
-    simpul-simpul tersebut. Setelah itu, semua simpul yang bersebelahan dengan 
-    simpul-simpul pada \textit{level} ke-1 dan belum pernah dikunjungi, akan dijadikan 
-    simpul-simpul pada \textit{level} ke-2 dan akan dikunjungi. Hal ini dilakukan terus 
-    menerus hingga semua simpul yang dapat dikunjungi dari $s$  telah dikunjungi. 
-    Algoritma ini menggunakan struktur data \textit{queue} dalam melakukan penjelajahan. 
-    Berikut adalah \textit{pseudocde} dari algoritma \textit{breadth-first search}.
+  \subsection{\textit{Breadth-First Search}}
+  Misalkan terdapat sebuah graf $G = (V, E)$ dan sebuah simpul awal $s$. Algoritma ini 
+  melakukan penjelajahan secara melebar pada setiap \textit{level}. Pertama-tama 
+  algoritma ini mengunjungi simpul awal $s$ sebagai simpul pada \textit{level} ke-0. 
+  Lalu, setiap simpul yang yang bersebelahan dengan simpul $s$ akan menjadi 
+  simpul-simpul pada \textit{level} ke-1 dan algoritma ini akan mengunjungi 
+  simpul-simpul tersebut. Setelah itu, semua simpul yang bersebelahan dengan 
+  simpul-simpul pada \textit{level} ke-1 dan belum pernah dikunjungi, akan dijadikan 
+  simpul-simpul pada \textit{level} ke-2 dan akan dikunjungi. Hal ini dilakukan terus 
+  menerus hingga semua simpul yang dapat dikunjungi dari $s$  telah dikunjungi. 
+  Algoritma ini menggunakan struktur data \textit{queue} dalam melakukan penjelajahan. 
+  Berikut adalah \textit{pseudocde} dari algoritma \textit{breadth-first search}.
 
-    \medskip
-    \lstinputlisting[style=customc, mathescape=true]{codes/bfs.txt}
+  \medskip
+  \lstinputlisting[style=customc, mathescape=true]{codes/bfs.txt}
 
-    \subsection{\textit{Depth-First Search}}
-    Misalkan terdapat sebuah graf $G = (V, E)$, sebuah simpul awal $s$, dan 
-    $s_{0}, s_{1}, ..., s_{k}$ sebagai simpul-simpul yang bersebelahan dengan $s$. 
-    Algoritma \textit{depth-first search} menjelajahi graf dengan mengunjungi anak dari 
-    suatu simpul terlebih dahulu. Pertama-tama algoritma ini mengunjungi simpul $s$. 
-    Lalu, memilih salah satu simpul, misalkan $s_{0}$, yang bersebelahan dengan $s$ dan 
-    belum dikunjungi sebagai simpul awal. Setelah tidak ada lagi simpul yang dapat 
-    dikujungi dari $s_{0}$, algoritma ini memilih simpul lain, misalkan $s_{1}$, yang 
-    bersebelahan dengan $s$ dan belum dikunjungi. Hal ini dilakukan terus-menerus hingga 
-    semua simpul yang dapat dikunjungi dari $s$ telah dikunjungi.
+  \subsection{\textit{Depth-First Search}}
+  Misalkan terdapat sebuah graf $G = (V, E)$, sebuah simpul awal $s$, dan 
+  $s_{0}, s_{1}, ..., s_{k}$ sebagai simpul-simpul yang bersebelahan dengan $s$. 
+  Algoritma \textit{depth-first search} menjelajahi graf dengan mengunjungi anak dari 
+  suatu simpul terlebih dahulu. Pertama-tama algoritma ini mengunjungi simpul $s$. 
+  Lalu, memilih salah satu simpul, misalkan $s_{0}$, yang bersebelahan dengan $s$ dan 
+  belum dikunjungi sebagai simpul awal. Setelah tidak ada lagi simpul yang dapat 
+  dikujungi dari $s_{0}$, algoritma ini memilih simpul lain, misalkan $s_{1}$, yang 
+  bersebelahan dengan $s$ dan belum dikunjungi. Hal ini dilakukan terus-menerus hingga 
+  semua simpul yang dapat dikunjungi dari $s$ telah dikunjungi.
 
-    \medskip
-    \lstinputlisting[style=customc, mathescape=true]{codes/dfs.txt}
+  \medskip
+  \lstinputlisting[style=customc, mathescape=true]{codes/dfs.txt}
 
 \section{Persoalan Jalur Terpendek}
 
@@ -160,81 +160,81 @@ nilai $P(V)$ dan $D(V)$ serta fungsi relax yang akan menerapkan teknik
 Dalam menentukan jalur terpendek maupun panjang jalur terpendek, terdapat beberapa 
 algoritma-algoritma seperti berikut.
 
-    \subsection{Algoritma Bellman-Ford}
-    Algoritma Bellman-Ford menyelesaikan persoalan jalur terpendek yang dimulai dari 
-    suatu simpul dengan menggunakan pendekatan pemrograman dinamis. Algoritma 
-    Bellman-Ford juga dapat menangani kasus \textit{negative cycle}. Diberikan graf 
-    $G = (V, E, W)$ dengan simpul awal jalur adalah $s$, algoritma Bellman-Ford 
-    mengembalikan \textit{boolean true} jika tidak terdapat \textit{negative cycle} 
-    dalam jalur terpendek dan algoritma ini akan menghasilkan jalur terpendek yang 
-    berasal dari simpul $s$. Algoritma ini melakukan \textit{}{relaxation} secara 
-    terus-menerus terhadap sisi-sisi pada graf, sehingga memperkecil nilai estimasi 
-    panjang jalur terpendek $D(V)$ hingga mencapai panjang jalur terpendek yang 
-    sebenarnya. Berikut adalah \textit{pseudocode} dari algoritma Bellman-Ford.
+  \subsection{Algoritma Bellman-Ford}
+  Algoritma Bellman-Ford menyelesaikan persoalan jalur terpendek yang dimulai dari 
+  suatu simpul dengan menggunakan pendekatan pemrograman dinamis. Algoritma 
+  Bellman-Ford juga dapat menangani kasus \textit{negative cycle}. Diberikan graf 
+  $G = (V, E, W)$ dengan simpul awal jalur adalah $s$, algoritma Bellman-Ford 
+  mengembalikan \textit{boolean true} jika tidak terdapat \textit{negative cycle} 
+  dalam jalur terpendek dan algoritma ini akan menghasilkan jalur terpendek yang 
+  berasal dari simpul $s$. Algoritma ini melakukan \textit{}{relaxation} secara 
+  terus-menerus terhadap sisi-sisi pada graf, sehingga memperkecil nilai estimasi 
+  panjang jalur terpendek $D(V)$ hingga mencapai panjang jalur terpendek yang 
+  sebenarnya. Berikut adalah \textit{pseudocode} dari algoritma Bellman-Ford.
 
-    \medskip
-    \lstinputlisting[style=customc]{codes/bellman-ford.txt}
+  \medskip
+  \lstinputlisting[style=customc]{codes/bellman-ford.txt}
 
-    Kompleksitas waktu dari algoritma Bellman-Ford adalah $O(VE)$. Algoritma Bellman-Ford 
-    dapat digunakan untuk mencari jalur terpendek setiap pasangan simpul pada graf, 
-    dengan memanggil fungsi Bellman-Ford untuk setiap simpul pada graf.  Dalam hal 
-    tersebut kompleksitas waktunya adalah $O(VVE)$.
+  Kompleksitas waktu dari algoritma Bellman-Ford adalah $O(VE)$. Algoritma Bellman-Ford 
+  dapat digunakan untuk mencari jalur terpendek setiap pasangan simpul pada graf, 
+  dengan memanggil fungsi Bellman-Ford untuk setiap simpul pada graf.  Dalam hal 
+  tersebut kompleksitas waktunya adalah $O(VVE)$.
 
-    \subsection{Algoritma Dijkstra}
-    Algoritma Dijkstra menyelesaikan persoalan jalur terpendek yang dimulai dari suatu 
-    simpul melalui pendekatan greedy. Diberikan graf berarah dan berbobot 
-    $G = (V, E, W)$, yang mana setiap sisi memiliki bobot yang merupakan bilangan tak 
-    negatif dan simpul $s$ yang merupakan simpul awal. Algoritma Dijkstra menyimpan 
-    himpunan simpul $U$ yang mana untuk tiap simpul pada $U$, sudah ditentukan jalur 
-    terpendek dari $s$. Algoritma ini berulang kali mengambil sebuah simpul $a$ pada 
-    $V - U$ yang mempunyai jarak terpendek yang telah diestimasi lalu menambahkan $a$ 
-    ke himpunan $U$. Setelah itu, melakukan relaxation kepada semua sisi yang keluar 
-    dari $a$. Berikut adalah \textit{pseudocode} dari algoritma Dijkstra.
+  \subsection{Algoritma Dijkstra}
+  Algoritma Dijkstra menyelesaikan persoalan jalur terpendek yang dimulai dari suatu 
+  simpul melalui pendekatan greedy. Diberikan graf berarah dan berbobot 
+  $G = (V, E, W)$, yang mana setiap sisi memiliki bobot yang merupakan bilangan tak 
+  negatif dan simpul $s$ yang merupakan simpul awal. Algoritma Dijkstra menyimpan 
+  himpunan simpul $U$ yang mana untuk tiap simpul pada $U$, sudah ditentukan jalur 
+  terpendek dari $s$. Algoritma ini berulang kali mengambil sebuah simpul $a$ pada 
+  $V - U$ yang mempunyai jarak terpendek yang telah diestimasi lalu menambahkan $a$ 
+  ke himpunan $U$. Setelah itu, melakukan relaxation kepada semua sisi yang keluar 
+  dari $a$. Berikut adalah \textit{pseudocode} dari algoritma Dijkstra.
 
-    \medskip
-    \lstinputlisting[style=customc, mathescape=true]{codes/dijkstra.txt}
+  \medskip
+  \lstinputlisting[style=customc, mathescape=true]{codes/dijkstra.txt}
 
-    Kompleksitas waktu dari algoritma Dijkstra adalah $O(V^{2} + E)$. Ketika menggunakan 
-    struktur data seperti \textit{self-balancing binary search tree} atau \textit{heap} 
-    pada $U$ dan $V$, kompleksitas waktu dari algoritma ini dapat mencapai 
-    $O((V + E) * \log V)$.
+  Kompleksitas waktu dari algoritma Dijkstra adalah $O(V^{2} + E)$. Ketika menggunakan 
+  struktur data seperti \textit{self-balancing binary search tree} atau \textit{heap} 
+  pada $U$ dan $V$, kompleksitas waktu dari algoritma ini dapat mencapai 
+  $O((V + E) * \log V)$.
 
-    Algoritma Dijkstra dapat digunakan untuk mencari jalur terpendek setiap pasangan 
-    simpul pada graf, dengan memanggil fungsi Dijkstra untuk setiap simpul pada graf. 
-    Dalam hal tersebut kompleksitas waktunya adalah $O(V*(V + E)* \log V)$.
+  Algoritma Dijkstra dapat digunakan untuk mencari jalur terpendek setiap pasangan 
+  simpul pada graf, dengan memanggil fungsi Dijkstra untuk setiap simpul pada graf. 
+  Dalam hal tersebut kompleksitas waktunya adalah $O(V*(V + E)* \log V)$.
 
-    \subsection{Algoritma Floyd-Warshall}
-    Algoritma Floyd-Warshall menggunakan pendekatan pemrograman dinamis dalam menemukan 
-    jalur terpendek untuk setiap pasangan simpul pada graf berarah dan berbobot 
-    $G = (V, E, W)$. Dalam menentukan jalur terpendek $(u,v)$, algoritma ini 
-    memperhatikan simpul intermediate, yaitu pada jalur 
-    $p = [v_{1}, v_{2}, v_{3}, ..., v_{n}]$, simpul intermediate adalah simpul yang 
-    bukan $v_{1}$ ataupun $v_{n}$. Algoritma ini bergantung pada observasi berikut. 
-    Misalkan $V = {1, 2, 3, ..., n}$ adalah simpul-simpul pada graf, $R = {1, 2, ..., k}$ 
-    adalah himpunan bagian dari $V$, untuk jalur terpendek dari setiap pasangan $(i, j)$ 
-    pada $V$ yang memiliki simpul intermediate dari $R$, dan $p$ adalah jalur terpendek 
-    dari pasangan-pasangan simpul tersebut. Hubungan dari $k$ dengan $p$ adalah sebagai 
-    berikut.
+  \subsection{Algoritma Floyd-Warshall}
+  Algoritma Floyd-Warshall menggunakan pendekatan pemrograman dinamis dalam menemukan 
+  jalur terpendek untuk setiap pasangan simpul pada graf berarah dan berbobot 
+  $G = (V, E, W)$. Dalam menentukan jalur terpendek $(u,v)$, algoritma ini 
+  memperhatikan simpul intermediate, yaitu pada jalur 
+  $p = [v_{1}, v_{2}, v_{3}, ..., v_{n}]$, simpul intermediate adalah simpul yang 
+  bukan $v_{1}$ ataupun $v_{n}$. Algoritma ini bergantung pada observasi berikut. 
+  Misalkan $V = {1, 2, 3, ..., n}$ adalah simpul-simpul pada graf, $R = {1, 2, ..., k}$ 
+  adalah himpunan bagian dari $V$, untuk jalur terpendek dari setiap pasangan $(i, j)$ 
+  pada $V$ yang memiliki simpul intermediate dari $R$, dan $p$ adalah jalur terpendek 
+  dari pasangan-pasangan simpul tersebut. Hubungan dari $k$ dengan $p$ adalah sebagai 
+  berikut.
 
-    \begin{enumerate}
-        \item Jika $k$ bukan simpul intermediate dari $p$, maka simpul-simpul intermediate dari $p$ adalah $R’ = {1, 2, ..., k-1}$.
-        \item Jika $k$ adalah simpul intermediate dari $p$, jalur terpendek $p$ dapat didekomposisi menjadi jalur terpendek $p^{(1)}$ dari $i$ ke $k$ 
-        dan jalur terpendek $p^{(2)}$ dari $k$ ke $j$. Simpul-simpul intermediate dari $p^{(1)}$ dan $p^{(2)}$ adalah dari $R’ = {1, 2, ..., k-1}$.
-    \end{enumerate}
+  \begin{enumerate}
+    \item Jika $k$ bukan simpul intermediate dari $p$, maka simpul-simpul intermediate dari $p$ adalah $R’ = {1, 2, ..., k-1}$.
+    \item Jika $k$ adalah simpul intermediate dari $p$, jalur terpendek $p$ dapat didekomposisi menjadi jalur terpendek $p^{(1)}$ dari $i$ ke $k$ 
+    dan jalur terpendek $p^{(2)}$ dari $k$ ke $j$. Simpul-simpul intermediate dari $p^{(1)}$ dan $p^{(2)}$ adalah dari $R’ = {1, 2, ..., k-1}$.
+  \end{enumerate}
 
-    Ketika $k$ bernilai 0, tidak ada simpul \textit{intermediate} pada $p$. Dari 
-    observasi di atas, dapat dibuat relasi rekurens untuk menghitung jalur terpendek 
-    dari $p$, yaitu:
-    \begin{equation}
-        d_{i,j}^{(k)} =
-        \begin{cases}
-            d_{i,j}^{(0)}, & \text{if } k = 0\\
-            min(d_{i,j}^{(k)}, d_{i,k}^{(k-1)} + d_{k,j}^{(k-1)}), & \text{otherwise}.
-        \end{cases}
-    \end{equation}
-    dimana $d_{i,j}^{(n)}$ adalah panjang dari jalur terpendek dari i ke j. Dari relasi rekurens diatas, dapat dibuat pseudocode dari algoritma Floyd-Warshall sebagai berikut.
+  Ketika $k$ bernilai 0, tidak ada simpul \textit{intermediate} pada $p$. Dari 
+  observasi di atas, dapat dibuat relasi rekurens untuk menghitung jalur terpendek 
+  dari $p$, yaitu
+  \begin{equation}
+    d_{i,j}^{(k)} =
+    \begin{cases}
+      d_{i,j}^{(0)}, & \text{if } k = 0\\
+      min(d_{i,j}^{(k)}, d_{i,k}^{(k-1)} + d_{k,j}^{(k-1)}), & \text{otherwise}.
+    \end{cases}
+  \end{equation}
+  dimana $d_{i,j}^{(n)}$ adalah panjang dari jalur terpendek dari i ke j. Dari relasi rekurens diatas, dapat dibuat pseudocode dari algoritma Floyd-Warshall sebagai berikut.
 
-    \medskip
-    \lstinputlisting[style=customc, mathescape=true]{codes/floyd-warshall.txt}
+  \medskip
+  \lstinputlisting[style=customc, mathescape=true]{codes/floyd-warshall.txt}
 
-    Kompleksitas waktu dari algoritma Floyd-Warshall adalah $O(V^{3})$.
+  Kompleksitas waktu dari algoritma Floyd-Warshall adalah $O(V^{3})$.

@@ -11,12 +11,12 @@ berupa bilangan bulat positif yang dilambangkan dengan $C$ .
 
 Dari info yang diberikan, masalah yang ingin diselesaikan adalah sebuah jalur yang akan dilewati truk, yang memenuhi syarat berikut:
 \begin{enumerate}
-    \item Setiap bobot dari sisi pada graf $G$ adalah bilangan bulat positif.
-    \item Setiap pesanan memiliki \textit{cost} $c_{i}$ bernilai bilangan bulat positif yang akan memakan kapasitas truk.
-    \item Penyimpanan truk bersifat LIFO atau \textit{last in, first out}.
-    \item Penurunan barang pada pesanan $p_{i}$ hanya dapat dilakukan setelah barang pada pesanan $p_{i}$ diambil.
-    \item Barang yang hanya dapat diturunkan hanya jika berada pada atas penyimpanan.
-    \item Jumlah ukuran barang yang terdapat pada penyimpanan suatu truk tidak melebihi kapasitasnya.
+  \item Setiap bobot dari sisi pada graf $G$ adalah bilangan bulat positif.
+  \item Setiap pesanan memiliki \textit{cost} $c_{i}$ bernilai bilangan bulat positif yang akan memakan kapasitas truk.
+  \item Penyimpanan truk bersifat LIFO atau \textit{last in, first out}.
+  \item Penurunan barang pada pesanan $p_{i}$ hanya dapat dilakukan setelah barang pada pesanan $p_{i}$ diambil.
+  \item Barang yang hanya dapat diturunkan hanya jika berada pada atas penyimpanan.
+  \item Jumlah ukuran barang yang terdapat pada penyimpanan suatu truk tidak melebihi kapasitasnya.
 \end{enumerate}
 
 Indikator pengukuran dari suatu rute adalah jumlah bobot dari sisi-sisi yang dilalui oleh semua truk yang akan dilambangkan dengan $T$. 
@@ -42,3 +42,5 @@ maka simpul \textit{drop off}-nya akan ditambahkan ke stack. Terakhir, ketika ti
 
 \medskip
 \lstinputlisting[style=customc]{codes/ra1.txt}
+
+\section{Rancangan Algoritma 2}

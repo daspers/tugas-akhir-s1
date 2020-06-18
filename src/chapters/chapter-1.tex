@@ -23,9 +23,9 @@ memiliki \textit{pickup}, yang disimbolkan dengan $P2$, terletak pada simpul $2$
 \textit{drop off}, yang disimbolkan dengan $D2$, terletak pada simpul $3$.
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=1.0\textwidth]{resources/graph_init.png}
-    \caption{Contoh tampilan antarmuka dari program}
+  \centering
+  \includegraphics[width=1.0\textwidth]{resources/graph_init.png}
+  \caption{Contoh tampilan antarmuka dari program}
 \end{figure}
 
 Pada umumnya kedua pesanan tersebut dilayani secara terpisah, contohnya pesanan satu 
@@ -33,9 +33,9 @@ memiliki rute $1-4-5-6$ yang memiliki \textit{cost} sebesar $3$ dan pesanan dua 
 rute $2-3$ dengan \textit{cost} sebesar $1$. Hal tersebut diilustrasikan pada Gambar I.2.
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=1.0\textwidth]{resources/graph_routes.png}
-    \caption{Graf yang memiliki rute 1-4-5-6 dan 2-3.}
+  \centering
+  \includegraphics[width=1.0\textwidth]{resources/graph_routes.png}
+  \caption{Graf yang memiliki rute 1-4-5-6 dan 2-3.}
 \end{figure}
 
 Namun, akan lebih efisien jika kedua pesanan tersebut dilakukan dalam sekali pengantaran 
@@ -46,9 +46,9 @@ dan menurunkan barang pesanan ke-2. Terakhir, truk menuju simpul 6  untuk melaku
 \textit{drop off} pada barang pesanan ke-1.
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=1.0\textwidth]{resources/graph_optimal.png}
-    \caption{Graf yang memiliki rute optimal 1-2-3-6.}
+  \centering
+  \includegraphics[width=1.0\textwidth]{resources/graph_optimal.png}
+  \caption{Graf yang memiliki rute optimal 1-2-3-6.}
 \end{figure}
 
 \section{Rumusan Masalah}
@@ -59,9 +59,9 @@ tidak selalu efisien dalam menangani banyak pesanan.
 Dari uraian tersebut, dapat dibentuk rumusan masalah sebagai berikut.
 
 \begin{enumerate}
-    % \item Bagaimana algoritma yang efisien untuk menentukan rute terbaik agar satu atau lebih pesanan dapat diselesaikan dalam sebuah rute pengantaran dengan sumber daya yang terbatas.
-    % \item Apa indikator pengukuran suatu rute pengantaran, sehingga dapat dibandingkan dengan rute pengantaran lainnya?
-    \item Bagaimana cara untuk menentukan rute pengantaran yang efisien sehingga dapat menyelesaikan satu atau lebih pengantaran?
+  % \item Bagaimana algoritma yang efisien untuk menentukan rute terbaik agar satu atau lebih pesanan dapat diselesaikan dalam sebuah rute pengantaran dengan sumber daya yang terbatas.
+  % \item Apa indikator pengukuran suatu rute pengantaran, sehingga dapat dibandingkan dengan rute pengantaran lainnya?
+  \item Bagaimana cara untuk menentukan rute pengantaran yang efisien sehingga dapat menyelesaikan satu atau lebih pengantaran?
 \end{enumerate}
 
 \section{Tujuan}
@@ -69,8 +69,8 @@ Dari uraian tersebut, dapat dibentuk rumusan masalah sebagai berikut.
 Berikut adalah tujuan yang ingin dicapai dalam penulisan tugas akhir ini:
 
 \begin{enumerate}
-    % \item Mengetahui indikator yang mengukur suatu rute pengantaran.
-    \item Algoritma untuk menentukan rute terbaik agar satu atau lebih pesanan dapat diselesaikan dalam sebuah rute pengantaran dengan sumber daya yang terbatas.
+  % \item Mengetahui indikator yang mengukur suatu rute pengantaran.
+  \item Algoritma untuk menentukan rute terbaik agar satu atau lebih pesanan dapat diselesaikan dalam sebuah rute pengantaran dengan sumber daya yang terbatas.
 \end{enumerate}
 
 \section{Batasan Masalah}
@@ -78,13 +78,13 @@ Berikut adalah tujuan yang ingin dicapai dalam penulisan tugas akhir ini:
 Berikut adalah batasan-batasan masalah yang perlu diperhatikan:
 
 \begin{enumerate}
-    % \item Truk memiliki kapasitas maksimal, yang merupakan bilangan bulat positif.
-    % \item Tiap pesanan memiliki cost bernilai bilangan bulat positif yang akan memakan kapasitas truk.
-    % \item Penyimpanan truk bersifat LIFO atau last in first out.
-    \item Selalu ada rute yang valid untuk setiap pesanan.
-    \item Truk dapat melakukan \textit{drop off} suatu barang hanya setelah melakukan \textit{pickup}.
-    % \item Truk dapat melakukan pengambilan barang dan pengiriman kapan saja.
-    \item Daftar pickup dan \textit{drop off} sudah terdefinisi sebelum ditentukan rute truk.
+  % \item Truk memiliki kapasitas maksimal, yang merupakan bilangan bulat positif.
+  % \item Tiap pesanan memiliki cost bernilai bilangan bulat positif yang akan memakan kapasitas truk.
+  % \item Penyimpanan truk bersifat LIFO atau last in first out.
+  \item Selalu ada rute yang valid untuk setiap pesanan.
+  \item Truk dapat melakukan \textit{drop off} suatu barang hanya setelah melakukan \textit{pickup}.
+  % \item Truk dapat melakukan pengambilan barang dan pengiriman kapan saja.
+  \item Daftar pickup dan \textit{drop off} sudah terdefinisi sebelum ditentukan rute truk.
 \end{enumerate}
 
 \section{Metodologi}
@@ -92,12 +92,12 @@ Berikut adalah batasan-batasan masalah yang perlu diperhatikan:
 Berikut ini adalah tahapan dalam pengerjaan tugas akhir.
 
 \begin{enumerate}
-    \item Melakukan analisis terhadap permasalahan.\\
-    Setelah mendapatkan definisi dari permasalahan, dilakukan analisis terhadap permasalahan, seperti masukan dan keluaran serta lingkup dan batasan permasalahan dan juga mempelajari algoritma shortest path untuk graf tak berarah.
-    \item Mendesain algoritma.\\
-    Pada tahap ini, dilakukan desain algoritma yang dapat menyelesaikan permasalahan dan memenuhi batasan-batasan masalah.
-    \item Melakukan analisis dan pengujian algoritma.\\
-    Terakhir, dilakukan analisis berupa kompleksitas algoritma, kebenaran algoritma, dan pengujian terhadap algoritma.
+  \item Melakukan analisis terhadap permasalahan.\\
+  Setelah mendapatkan definisi dari permasalahan, dilakukan analisis terhadap permasalahan, seperti masukan dan keluaran serta lingkup dan batasan permasalahan dan juga mempelajari algoritma shortest path untuk graf tak berarah.
+  \item Mendesain algoritma.\\
+  Pada tahap ini, dilakukan desain algoritma yang dapat menyelesaikan permasalahan dan memenuhi batasan-batasan masalah.
+  \item Melakukan analisis dan pengujian algoritma.\\
+  Terakhir, dilakukan analisis berupa kompleksitas algoritma, kebenaran algoritma, dan pengujian terhadap algoritma.
 \end{enumerate}
 
 \section{Jadwal Pelaksanaan Tugas Akhir}
@@ -105,55 +105,55 @@ Berikut ini adalah tahapan dalam pengerjaan tugas akhir.
 Berikut adalah jadwal pengerjaan tugas akhir.
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=1.0\textwidth]{resources/jadwal1.png}
-    \caption{Jadwal pengerjaan tugas akhir bagian 1.}
+  \centering
+  \includegraphics[width=1.0\textwidth]{resources/jadwal1.png}
+  \caption{Jadwal pengerjaan tugas akhir bagian 1.}
 \end{figure}
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=1.0\textwidth]{resources/jadwal2.png}
-    \caption{Jadwal pengerjaan tugas akhir bagian 2.}
+  \centering
+  \includegraphics[width=1.0\textwidth]{resources/jadwal2.png}
+  \caption{Jadwal pengerjaan tugas akhir bagian 2.}
 \end{figure}
 
 Keterangan:
 \begin{itemize}
-    \item m1: 30 September 2019 - 6 Oktober 2019
-    \item m2: 7 Oktober 2019 - 13 Oktober 2019
-    \item m3: 14 Oktober 2019 - 20 Oktober 2019
-    \item m4: 21 Oktober 2019 - 20 Oktober 2019
-    \item m5: 28 Oktober 2019 - 3 November 2019
-    \item m6: 4 November 2019 - 10 November 2019
-    \item m7: 11 November 2019 - 17 November 2019
-    \item m8: 18 November 2019 - 24 November 2019
-    \item m9: 25 November 2019 - 1 Desember 2019
-    \item m10: 2 Desember 2019 - 8 Desember 2019
-    \item m11: 9 Desember 2019 - 15 Desember 2019
-    \item m12: 16 Desember 2019 - 22 Desember 2019
-    \item m13: 23 Desember 2019 - 29 Desember 2019
-    \item m14: 30 Desember 2019 - 5 Januari 2020
-    \item m15: 6 Januari 2020 - 12 Januari 2020
-    \item m16: 13 Januari 2020 - 19 Januari 2020
-    \item m17: 20 Januari 2020 - 26 Januari 2020
-    \item m18: 27 Januari 2020 - 2 Februari 2020
-    \item m19: 3 Februari 2020 - 9 Februari 2020
-    \item m20: 10 Februari 2020 - 16 Februari 2020
-    \item m21: 17 Februari 2020 - 23 Februari 2020
-    \item m22: 24 Februari 2020 - 1 Maret 2020
-    \item m23: 2 Maret 2020 - 8 Maret 2020
-    \item m24: 9 Maret 2020 - 15 Maret 2020
-    \item m25: 16 Maret 2020 - 22 Maret 2020
-    \item m26: 23 Maret 2020 - 29 Maret 2020
-    \item m27: 30 Maret 2020 - 5 April 2020
-    \item m28: 6 April 2020 - 12 April 2020
-    \item m29: 13 April 2020 - 19 April 2020
-    \item m30: 20 April 2020 - 26 April 2020
-    \item m31: 27 April 2020 - 3 Mei 2020
-    \item m32: 4 Mei 2020 - 10 Mei 2020
-    \item m33: 11 Mei 2020 - 17 Mei 2020
-    \item m34: 18 Mei 2020 - 24 Mei 2020
-    \item m35: 25 Mei 2020 - 31 Mei 2020
-    \item m36: 1 Juni 2020 - 7 Juni 2020
-    \item m37: 8 Juni 2020 - 14 Juni 2020
-    \item m38: 15 Juni 2020 - 21 Juni 2020
+  \item m1: 30 September 2019 - 6 Oktober 2019
+  \item m2: 7 Oktober 2019 - 13 Oktober 2019
+  \item m3: 14 Oktober 2019 - 20 Oktober 2019
+  \item m4: 21 Oktober 2019 - 20 Oktober 2019
+  \item m5: 28 Oktober 2019 - 3 November 2019
+  \item m6: 4 November 2019 - 10 November 2019
+  \item m7: 11 November 2019 - 17 November 2019
+  \item m8: 18 November 2019 - 24 November 2019
+  \item m9: 25 November 2019 - 1 Desember 2019
+  \item m10: 2 Desember 2019 - 8 Desember 2019
+  \item m11: 9 Desember 2019 - 15 Desember 2019
+  \item m12: 16 Desember 2019 - 22 Desember 2019
+  \item m13: 23 Desember 2019 - 29 Desember 2019
+  \item m14: 30 Desember 2019 - 5 Januari 2020
+  \item m15: 6 Januari 2020 - 12 Januari 2020
+  \item m16: 13 Januari 2020 - 19 Januari 2020
+  \item m17: 20 Januari 2020 - 26 Januari 2020
+  \item m18: 27 Januari 2020 - 2 Februari 2020
+  \item m19: 3 Februari 2020 - 9 Februari 2020
+  \item m20: 10 Februari 2020 - 16 Februari 2020
+  \item m21: 17 Februari 2020 - 23 Februari 2020
+  \item m22: 24 Februari 2020 - 1 Maret 2020
+  \item m23: 2 Maret 2020 - 8 Maret 2020
+  \item m24: 9 Maret 2020 - 15 Maret 2020
+  \item m25: 16 Maret 2020 - 22 Maret 2020
+  \item m26: 23 Maret 2020 - 29 Maret 2020
+  \item m27: 30 Maret 2020 - 5 April 2020
+  \item m28: 6 April 2020 - 12 April 2020
+  \item m29: 13 April 2020 - 19 April 2020
+  \item m30: 20 April 2020 - 26 April 2020
+  \item m31: 27 April 2020 - 3 Mei 2020
+  \item m32: 4 Mei 2020 - 10 Mei 2020
+  \item m33: 11 Mei 2020 - 17 Mei 2020
+  \item m34: 18 Mei 2020 - 24 Mei 2020
+  \item m35: 25 Mei 2020 - 31 Mei 2020
+  \item m36: 1 Juni 2020 - 7 Juni 2020
+  \item m37: 8 Juni 2020 - 14 Juni 2020
+  \item m38: 15 Juni 2020 - 21 Juni 2020
 \end{itemize}
