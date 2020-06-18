@@ -2,29 +2,36 @@
 
 \section{Logistik}
 
-Kegiatan logistik merupakan penyampaian atau pengiriman barang atau material dalam jumlah 
-tertentu dan waktu yang tepat ke suatu lokasi tertentu dengan biaya seminimal mungkin. Dari proses 
-logistik, material atau barang dapat sampai ke tempat produksi melalui saluran distribusi, sehingga mampu 
-memberikan kegunaan yang baik. Logistik yang dikelola dengan tepat, baik secara kuantitas maupun kualitas, kuantitas, 
-maupun waktu dan biaya, dapan menjadi aset utama organisasi, yaitu sebagai sumber 
-pendapatan yang strategis dan berperan mendorong kegiatan ekonomi. Logistik berasal dari kata logis yang berarti rasional dan tikos yang berarti 
-berfikir, sehingga logistik memiliki arti berfikir rasioal dalam menjalankan kegiatan. 
+Kegiatan logistik merupakan penyampaian atau pengiriman barang atau material dalam 
+jumlah tertentu dan waktu yang tepat ke suatu lokasi tertentu dengan biaya seminimal 
+mungkin. Dari proses logistik, material atau barang dapat sampai ke tempat produksi 
+melalui saluran distribusi, sehingga mampu memberikan kegunaan yang baik. Logistik yang 
+dikelola dengan tepat, baik secara kuantitas maupun kualitas, kuantitas, maupun waktu 
+dan biaya, dapan menjadi aset utama organisasi, yaitu sebagai sumber pendapatan yang 
+strategis dan berperan mendorong kegiatan ekonomi. Logistik berasal dari kata logis yang 
+berarti rasional dan tikos yang berarti berfikir, sehingga logistik memiliki arti 
+berfikir rasioal dalam menjalankan kegiatan. 
 
-Menurut Donald Bowersox, Logistik merupakan proses pengelolaan yang strategis terhadap pemindahan
-dan penyimpanan barang dari \textit{suplier} kepada perusahaan dan pelanggan. Ciri utama dari kegiatan logistik adalah 
-keterpaduan berbagai dimensi dan tuntutan terhadap pemindahan (\textit{movement}) dan penyimpanan (\textit{storage}) yang strategis.
+Menurut Donald Bowersox, Logistik merupakan proses pengelolaan yang strategis terhadap 
+pemindahan dan penyimpanan barang dari \textit{suplier} kepada perusahaan dan 
+pelanggan. Ciri utama dari kegiatan logistik adalah keterpaduan berbagai dimensi dan 
+tuntutan terhadap pemindahan (\textit{movement}) dan penyimpanan (\textit{storage}) yang 
+strategis.
 
 
 \section{\textit{Stack}}
 
-\textit{Stack} adalah suatu struktur data dinamis yang mengikuti aturan \textit{LIFO} (\textit{Last In, First Out}) dalam melakukan operasinya. 
-Terdapat tiga operasi pada struktur data ini, yaitu \textit{top}, \textit{push} (\textit{insert}), dan \textit{pop} (\textit{delete}).
-Operasi \textit{top} mendapatkan \textit{index} atau posisi dari elemen terakhir yang ditambahkan, \textit{push} 
-menambahkan elemen ke \textit{stack}, dan \textit{pop} menghapus elemen yang paling terakhir ditambahkan.
+\textit{Stack} adalah suatu struktur data dinamis yang mengikuti aturan \textit{LIFO} 
+(\textit{Last In, First Out}) dalam melakukan operasinya. Terdapat tiga operasi pada 
+struktur data ini, yaitu \textit{top}, \textit{push} (\textit{insert}), dan \textit{pop} 
+(\textit{delete}). Operasi \textit{top} mendapatkan \textit{index} atau posisi dari 
+elemen terakhir yang ditambahkan, \textit{push} menambahkan elemen ke \textit{stack}, 
+dan \textit{pop} menghapus elemen yang paling terakhir ditambahkan.
 
-Misalkan elemen pada \textit{stack} tersusun atas $S[1, 2, ..., S.top]$, dimana $S[1]$ merupakan elemen yang berada pada \textit{bottom} dari \textit{stack}
-dan $S[S.top]$ adalah elemen teratas dari \textit{stack}. \textit{Stack} kosong ketika $S.top$ bernilai 0. \textit{Pseudocode} dari 
-operasi struktur data \textit{stack} adalah sebagai berikut.
+Misalkan elemen pada \textit{stack} tersusun atas $S[1, 2, ..., S.top]$, dimana $S[1]$ 
+merupakan elemen yang berada pada \textit{bottom} dari \textit{stack} dan $S[S.top]$ 
+adalah elemen teratas dari \textit{stack}. \textit{Stack} kosong ketika $S.top$ bernilai 
+0. \textit{Pseudocode} dari operasi struktur data \textit{stack} adalah sebagai berikut.
 
 \medskip
 \lstinputlisting[style=customc]{codes/stack-empty.txt}
@@ -35,82 +42,114 @@ operasi struktur data \textit{stack} adalah sebagai berikut.
 
 \section{Graf}
 
-Graf adalah struktur diskrit yang terdiri atas simpul dan sisi yang menghubungkan simpul-simpul tersebut. Graf $G$ dapat didefinisikan sebagai sebuah \textit{tuple} yang 
-terdiri atas himpunan simpul $V(G)$, himpunan sisi $E(G)$, dan himpunan relasi yang menghubungkan antara tepat dua buah simpul dan tepat sebuah sisi. Titik ujung dari suatu sisi 
-adalah dua buah simpul yang terhubung pada sisi tersebut. Cincin adalah sisi yang kedua simpul di ujungnya sama. Graf disebut sederhana jika tidak memiliki lebih 
-dari satu sisi yang menghubungkan pasangan simpul berbeda yang sama dan tidak memiliki cincin. Graf berbobot adalah graf yang setiap sisi-sisinya memiliki bobot atau nilai.
+Graf adalah struktur diskrit yang terdiri atas simpul dan sisi yang menghubungkan 
+simpul-simpul tersebut. Graf $G$ dapat didefinisikan sebagai sebuah \textit{tuple} yang 
+terdiri atas himpunan simpul $V(G)$, himpunan sisi $E(G)$, dan himpunan relasi yang 
+menghubungkan antara tepat dua buah simpul dan tepat sebuah sisi. Titik ujung dari suatu 
+sisi adalah dua buah simpul yang terhubung pada sisi tersebut. Cincin adalah sisi yang 
+kedua simpul di ujungnya sama. Graf disebut sederhana jika tidak memiliki lebih dari 
+satu sisi yang menghubungkan pasangan simpul berbeda yang sama dan tidak memiliki cincin. 
+Graf berbobot adalah graf yang setiap sisi-sisinya memiliki bobot atau nilai.
 
-Graf berarah adalah graf yang setiap sisi-sisinya dikaitkan dengan suatu arah. Sisi pada graf berarah 
-dapat di representasikan dengan $e (u, v)$ yang mana sisi $e$ memiliki arah dan menghubungkan 
-simpul $u$ dan simpul $v$ serta arah dari sisi tersebut adalah dari $u$ ke $v$. Dengan menggunakan 
-sisi tersebut dari simpul $u$ dapat menuju simpul $v$, namun tidak sebaliknya. Graf yang setiap sisi-sisinya 
-tidak memiliki arah disebut dengan graf tak berarah.
+Graf berarah adalah graf yang setiap sisi-sisinya dikaitkan dengan suatu arah. Sisi pada 
+graf berarah dapat di representasikan dengan $e (u, v)$ yang mana sisi $e$ memiliki arah 
+dan menghubungkan simpul $u$ dan simpul $v$ serta arah dari sisi tersebut adalah dari $u$ 
+ke $v$. Dengan menggunakan sisi tersebut dari simpul $u$ dapat menuju simpul $v$, namun 
+tidak sebaliknya. Graf yang setiap sisi-sisinya tidak memiliki arah disebut dengan graf 
+tak berarah.
 
 \section{Jalur}
 
-Jalur dapat didefinisikan sebagai berikut. Misalkan $n$ merupakan bilangan bulat tak negatif dan $G$ merupakan suatu graf. Sebuah jalur dengan 
-panjang $n$ dari simpul $u$ ke simpul $v$ adalah rangkaian yang tersusun atas $n$ buah sisi $e_{1}, e_{2}, ..., e_{n}$ yang mana untuk setiap $1 \leq i \leq n$, $e_{i}$ merupakan sisi 
-di $G$ dan sisi $e_{i}$ menghubungkan simpul $v_{i-1}$ dengan simpul $v_{i}$ serta $x_{0} = u$ dan $x_{n} = v$. Singkatnya, jalur adalah rangkaian dari sisi-sisi yang dimulai dari 
-suatu simpul dan bergerak dari simpul ke simpul yang terhubung dengan sisi pada graf. Suatu jalur yang dimulai dan diakhiri pada simpul yang sama disebut 
-dengan sirkuit, yang mana $v_{0} = v_{n}$ dan minimal melewati sebuah sisi. Suatu jalur disebut sederhana jika sisi yang dilewati jalur tersebut tidak berulang.
+Jalur dapat didefinisikan sebagai berikut. Misalkan $n$ merupakan bilangan bulat tak 
+negatif dan $G$ merupakan suatu graf. Sebuah jalur dengan panjang $n$ dari simpul $u$ 
+ke simpul $v$ adalah rangkaian yang tersusun atas $n$ buah sisi 
+$e_{1}, e_{2}, ..., e_{n}$ yang mana untuk setiap $1 \leq i \leq n$, $e_{i}$ merupakan 
+sisi di $G$ dan sisi $e_{i}$ menghubungkan simpul $v_{i-1}$ dengan simpul $v_{i}$ serta 
+$x_{0} = u$ dan $x_{n} = v$. Singkatnya, jalur adalah rangkaian dari sisi-sisi yang 
+dimulai dari suatu simpul dan bergerak dari simpul ke simpul yang terhubung dengan sisi 
+pada graf. Suatu jalur yang dimulai dan diakhiri pada simpul yang sama disebut dengan 
+sirkuit, yang mana $v_{0} = v_{n}$ dan minimal melewati sebuah sisi. Suatu jalur disebut 
+sederhana jika sisi yang dilewati jalur tersebut tidak berulang.
 
-Panjang sebuah jalur pada graf tak berbobot adalah jumlah dari sisi-sisi yang dilewati. Panjang dari jalur pada graf berbobot adalah jumlah bobot dari sisi yang dilewati.
+Panjang sebuah jalur pada graf tak berbobot adalah jumlah dari sisi-sisi yang dilewati. 
+Panjang dari jalur pada graf berbobot adalah jumlah bobot dari sisi yang dilewati.
 
 \section{Menjelajahi Graf}
 
-Menjelajahi graf adalah suatu proses untuk mengunjungi setiap simpul pada suatu graf. Berikut adalah 
-algoritma-algoritma yang sering digunakan untuk menjelajahi graf.
+Menjelajahi graf adalah suatu proses untuk mengunjungi setiap simpul pada suatu graf. 
+Berikut adalah algoritma-algoritma yang sering digunakan untuk menjelajahi graf.
 
     \subsection{\textit{Breadth-First Search}}
-    Misalkan terdapat sebuah graf $G = (V, E)$ dan sebuah simpul awal $s$. Algoritma ini melakukan penjelajahan secara melebar pada setiap \textit{level}. 
-    Pertama-tama algoritma ini mengunjungi simpul awal $s$ sebagai simpul pada \textit{level} ke-0. Lalu, setiap simpul yang 
-    yang bersebelahan dengan simpul $s$ akan menjadi simpul-simpul pada \textit{level} ke-1 dan algoritma ini akan mengunjungi 
-    simpul-simpul tersebut. Setelah itu, semua simpul yang bersebelahan 
-    dengan simpul-simpul pada \textit{level} ke-1 dan belum pernah dikunjungi, akan dijadikan simpul-simpul pada \textit{level} ke-2 dan 
-    akan dikunjungi. Hal ini dilakukan terus menerus hingga semua simpul yang dapat dikunjungi dari $s$  telah dikunjungi.
-    Algoritma ini menggunakan struktur data \textit{queue} dalam melakukan penjelajahan.
+    Misalkan terdapat sebuah graf $G = (V, E)$ dan sebuah simpul awal $s$. Algoritma ini 
+    melakukan penjelajahan secara melebar pada setiap \textit{level}. Pertama-tama 
+    algoritma ini mengunjungi simpul awal $s$ sebagai simpul pada \textit{level} ke-0. 
+    Lalu, setiap simpul yang yang bersebelahan dengan simpul $s$ akan menjadi 
+    simpul-simpul pada \textit{level} ke-1 dan algoritma ini akan mengunjungi 
+    simpul-simpul tersebut. Setelah itu, semua simpul yang bersebelahan dengan 
+    simpul-simpul pada \textit{level} ke-1 dan belum pernah dikunjungi, akan dijadikan 
+    simpul-simpul pada \textit{level} ke-2 dan akan dikunjungi. Hal ini dilakukan terus 
+    menerus hingga semua simpul yang dapat dikunjungi dari $s$  telah dikunjungi. 
+    Algoritma ini menggunakan struktur data \textit{queue} dalam melakukan penjelajahan. 
     Berikut adalah \textit{pseudocde} dari algoritma \textit{breadth-first search}.
 
     \medskip
     \lstinputlisting[style=customc, mathescape=true]{codes/bfs.txt}
 
     \subsection{\textit{Depth-First Search}}
-    Misalkan terdapat sebuah graf $G = (V, E)$, sebuah simpul awal $s$, dan $s_{0}, s_{1}, ..., s_{k}$ sebagai simpul-simpul 
-    yang bersebelahan dengan $s$. Algoritma \textit{depth-first search} menjelajahi 
-    graf dengan mengunjungi anak dari suatu simpul terlebih dahulu. Pertama-tama algoritma ini mengunjungi simpul $s$. Lalu, 
-    memilih salah satu simpul, misalkan $s_{0}$, yang bersebelahan dengan $s$ dan belum dikunjungi sebagai simpul awal.
-    Setelah tidak ada lagi simpul yang dapat dikujungi dari $s_{0}$, algoritma ini memilih simpu lain, misalkan $s_{1}$, yang bersebelahan dengan $s$ dan belum dikunjungi.
-    Hal ini dilakukan terus-menerus hingga semua simpul yang dapat dikunjungi dari $s$ telah dikunjungi.
+    Misalkan terdapat sebuah graf $G = (V, E)$, sebuah simpul awal $s$, dan 
+    $s_{0}, s_{1}, ..., s_{k}$ sebagai simpul-simpul yang bersebelahan dengan $s$. 
+    Algoritma \textit{depth-first search} menjelajahi graf dengan mengunjungi anak dari 
+    suatu simpul terlebih dahulu. Pertama-tama algoritma ini mengunjungi simpul $s$. 
+    Lalu, memilih salah satu simpul, misalkan $s_{0}$, yang bersebelahan dengan $s$ dan 
+    belum dikunjungi sebagai simpul awal. Setelah tidak ada lagi simpul yang dapat 
+    dikujungi dari $s_{0}$, algoritma ini memilih simpul lain, misalkan $s_{1}$, yang 
+    bersebelahan dengan $s$ dan belum dikunjungi. Hal ini dilakukan terus-menerus hingga 
+    semua simpul yang dapat dikunjungi dari $s$ telah dikunjungi.
 
     \medskip
     \lstinputlisting[style=customc, mathescape=true]{codes/dfs.txt}
 
 \section{Persoalan Jalur Terpendek}
 
-Jalur terpendek dari simpul $u$ ke simpul $v$ adalah jalur yang dimulai dari simpul $u$ dan diakhiri pada simpul $v$ yang memiliki panjang minimum. 
-Persoalan jalur terpendek dapat dibagi menjadi 4 variasi, yaitu persoalan jalur terpendek dari simpul $u$ ke simpul $v$, persoalan jalur terpendek yang 
-dimulai dari suatu simpul, jalur terpendek untuk setiap pasangan simpul pada graf, dan jalur terpendek yang berakhir pada suatu simpul. Jalur 
-terpendek memiliki suatu sifat, yaitu sub-jalur dari suatu jalur terpendek adalah sebuah jalur terpendek. Agar dapat menyimpan jalur terpendek, 
-akan digunakan $P(V)$ yang mana untuk tiap $p_{i}$ pada $P(V)$ merupakan pendahulu pada jalur terpendek yang diakhiri di simpul $i$, sehingga untuk mendapatkan 
-jalur terpendek yang diakhiri pada simpul ke $u$, dapat dilakukan dengan mencari pendahulu-pendahulu dari simpul tersebut.
+Jalur terpendek dari simpul $u$ ke simpul $v$ adalah jalur yang dimulai dari simpul $u$ 
+dan diakhiri pada simpul $v$ yang memiliki panjang minimum. Persoalan jalur terpendek 
+dapat dibagi menjadi 4 variasi, yaitu persoalan jalur terpendek dari simpul $u$ ke 
+simpul $v$, persoalan jalur terpendek yang dimulai dari suatu simpul, jalur terpendek 
+untuk setiap pasangan simpul pada graf, dan jalur terpendek yang berakhir pada suatu 
+simpul. Jalur terpendek memiliki suatu sifat, yaitu sub-jalur dari suatu jalur terpendek 
+adalah sebuah jalur terpendek. Agar dapat menyimpan jalur terpendek, akan digunakan 
+$P(V)$ yang mana untuk tiap $p_{i}$ pada $P(V)$ merupakan pendahulu pada jalur terpendek 
+yang diakhiri di simpul $i$, sehingga untuk mendapatkan jalur terpendek yang diakhiri 
+pada simpul ke $u$, dapat dilakukan dengan mencari pendahulu-pendahulu dari simpul 
+tersebut.
 
 \medskip
 \lstinputlisting[style=customc]{codes/get-path.txt}
 
-Salah satu permasalahan yang dihadapi dalam melakukan pencarian jalur terpendek adalah ketika terdapat \textit{negative cycle} yang dapat dicapai dari 
-simpul awal. \textit{Negative cycle} adalah sirkuit yang memiliki panjang yang negatif. Ketika terdapat sirkuit yang dapat dicapai dari $s$, maka terdapat 
-tak hingga jalur yang dapat dibentuk. Jika sirkuit tersebut memiliki panjang yang negatif, dapat dibuktikan bahwa tidak ada jalur terpendek 
-yang dimulai dari simpul $s$.
+Salah satu permasalahan yang dihadapi dalam melakukan pencarian jalur terpendek adalah 
+ketika terdapat \textit{negative cycle} yang dapat dicapai dari simpul awal. 
+\textit{Negative cycle} adalah sirkuit yang memiliki panjang yang negatif. Ketika 
+terdapat sirkuit yang dapat dicapai dari $s$, maka terdapat tak hingga jalur yang dapat 
+dibentuk. Jika sirkuit tersebut memiliki panjang yang negatif, dapat dibuktikan bahwa 
+tidak ada jalur terpendek yang dimulai dari simpul $s$.
 
-Pada suatu jalur terpendek, mustahil terdapat sirkuit dengan  panjang positif. Misalkan $p = [v_{0}, v_{1}, v_{2}, v_{3}, ..., v_{n}]$ adalah jalur terpendek, 
-$c = [v_{i}, v_{i+1}, ..., v_{j-1}, v_{j}]$ adalah sirkuit dengan panjang positif yang terdapat pada $p$, $L(x)$ adalah panjang dari jalur $x$, dan 
-$p’ = [v_{0}, v_{1}, ..., v_{i}, v_{j+1}, …, v_{n}]$ adalah jalur $p$ tanpa sirkuit $c$. Jalur $p’$ memiliki panjang $L(p’)$ dan 
-$L(p’) = L(p) - L(c) < L(p)$. Panjang jalur $p’$ lebih kecil dari pada panjang jalur $p$, sehingga $p$ tidak mungkin menjadi jalur terpendek.
+Pada suatu jalur terpendek, mustahil terdapat sirkuit dengan  panjang positif. Misalkan 
+$p = [v_{0}, v_{1}, v_{2}, v_{3}, ..., v_{n}]$ adalah jalur terpendek, 
+$c = [v_{i}, v_{i+1}, ..., v_{j-1}, v_{j}]$ adalah sirkuit dengan panjang positif yang 
+terdapat pada $p$, $L(x)$ adalah panjang dari jalur $x$, dan 
+$p’ = [v_{0}, v_{1}, ..., v_{i}, v_{j+1}, …, v_{n}]$ adalah jalur $p$ tanpa sirkuit $c$. 
+Jalur $p’$ memiliki panjang $L(p’)$ dan $L(p’) = L(p) - L(c) < L(p)$. Panjang jalur 
+$p’$ lebih kecil dari pada panjang jalur $p$, sehingga $p$ tidak mungkin menjadi jalur 
+terpendek.
 
-Pada bahasan subbab dibawah ini, akan digunakan teknik relaxation. Teknik ini menyimpan $D(V)$ sebagai batas atas jarak terpendek dari simpul $s$, 
-yang mana di adalah batas atas jarak terpendek dari simpul $s$ ke simpul $i$. Proses relaxing pada sisi $(u, v)$ terdiri atas mengecek apakah estimasi 
-jalur terpendek menuju $v$ dapat di perkecil dan mengubah estimasi panjang jalur terpendek. Selain itu, juga akan dipakai fungsi \textit{init-single-source} 
-yang merupakan fungsi untuk melakukan inisialisasi pada nilai $P(V)$ dan $D(V)$ serta fungsi relax yang akan menerapkan teknik \textit{relaxation} pada sisi $(u,v)$.
+Pada bahasan subbab dibawah ini, akan digunakan teknik relaxation. Teknik ini menyimpan 
+$D(V)$ sebagai batas atas jarak terpendek dari simpul $s$, yang mana di adalah batas 
+atas jarak terpendek dari simpul $s$ ke simpul $i$. Proses relaxing pada sisi $(u, v)$ 
+terdiri atas mengecek apakah estimasi jalur terpendek menuju $v$ dapat di perkecil dan 
+mengubah estimasi panjang jalur terpendek. Selain itu, juga akan dipakai fungsi 
+\textit{init-single-source} yang merupakan fungsi untuk melakukan inisialisasi pada 
+nilai $P(V)$ dan $D(V)$ serta fungsi relax yang akan menerapkan teknik 
+\textit{relaxation} pada sisi $(u,v)$.
 
 \medskip
 \lstinputlisting[style=customc, mathescape=true]{codes/init-single-source.txt}
@@ -118,45 +157,64 @@ yang merupakan fungsi untuk melakukan inisialisasi pada nilai $P(V)$ dan $D(V)$ 
 \medskip
 \lstinputlisting[style=customc]{codes/relax.txt}
 
-Dalam menentukan jalur terpendek maupun panjang jalur terpendek, terdapat beberapa algoritma-algoritma seperti berikut.
+Dalam menentukan jalur terpendek maupun panjang jalur terpendek, terdapat beberapa 
+algoritma-algoritma seperti berikut.
 
     \subsection{Algoritma Bellman-Ford}
-    Algoritma Bellman-Ford menyelesaikan persoalan jalur terpendek yang dimulai dari suatu simpul dengan menggunakan pendekatan pemrograman dinamis. 
-    Algoritma Bellman-Ford juga dapat menangani kasus \textit{negative cycle}. Diberikan 
-    graf $G = (V, E, W)$ dengan simpul awal jalur adalah $s$, algoritma Bellman-Ford mengembalikan \textit{boolean true} jika tidak terdapat \textit{negative cycle} dalam 
-    jalur terpendek dan algoritma ini akan menghasilkan jalur terpendek yang berasal dari simpul $s$. Algoritma ini melakukan \textit{}{relaxation} secara terus-menerus 
-    terhadap sisi-sisi pada graf, sehingga memperkecil nilai estimasi panjang jalur terpendek $D(V)$ hingga mencapai panjang jalur terpendek yang sebenarnya. 
-    Berikut adalah \textit{pseudocode} dari algoritma Bellman-Ford.
+    Algoritma Bellman-Ford menyelesaikan persoalan jalur terpendek yang dimulai dari 
+    suatu simpul dengan menggunakan pendekatan pemrograman dinamis. Algoritma 
+    Bellman-Ford juga dapat menangani kasus \textit{negative cycle}. Diberikan graf 
+    $G = (V, E, W)$ dengan simpul awal jalur adalah $s$, algoritma Bellman-Ford 
+    mengembalikan \textit{boolean true} jika tidak terdapat \textit{negative cycle} 
+    dalam jalur terpendek dan algoritma ini akan menghasilkan jalur terpendek yang 
+    berasal dari simpul $s$. Algoritma ini melakukan \textit{}{relaxation} secara 
+    terus-menerus terhadap sisi-sisi pada graf, sehingga memperkecil nilai estimasi 
+    panjang jalur terpendek $D(V)$ hingga mencapai panjang jalur terpendek yang 
+    sebenarnya. Berikut adalah \textit{pseudocode} dari algoritma Bellman-Ford.
 
     \medskip
     \lstinputlisting[style=customc]{codes/bellman-ford.txt}
 
-    Kompleksitas waktu dari algoritma Bellman-Ford adalah $O(VE)$. Algoritma Bellman-Ford dapat digunakan untuk mencari jalur terpendek setiap pasangan simpul pada 
-    graf, dengan memanggil fungsi Bellman-Ford untuk setiap simpul pada graf.  Dalam hal tersebut kompleksitas waktunya adalah $O(VVE)$.
+    Kompleksitas waktu dari algoritma Bellman-Ford adalah $O(VE)$. Algoritma Bellman-Ford 
+    dapat digunakan untuk mencari jalur terpendek setiap pasangan simpul pada graf, 
+    dengan memanggil fungsi Bellman-Ford untuk setiap simpul pada graf.  Dalam hal 
+    tersebut kompleksitas waktunya adalah $O(VVE)$.
 
     \subsection{Algoritma Dijkstra}
-    Algoritma Dijkstra menyelesaikan persoalan jalur terpendek yang dimulai dari suatu simpul melalui pendekatan greedy. Diberikan graf berarah dan berbobot $G = (V, E, W)$, 
-    yang mana setiap sisi memiliki bobot yang merupakan bilangan tak negatif dan simpul $s$ yang merupakan simpul awal. Algoritma Dijkstra menyimpan himpunan simpul $U$ yang 
-    mana untuk tiap simpul pada $U$, sudah ditentukan jalur terpendek dari $s$. Algoritma ini berulang kali mengambil sebuah simpul $a$ pada $V - U$ yang mempunyai jarak terpendek 
-    yang telah diestimasi lalu menambahkan $a$ ke himpunan $U$. Setelah itu, melakukan relaxation kepada semua sisi yang keluar dari $a$. 
-    Berikut adalah \textit{pseudocode} dari algoritma Dijkstra.
+    Algoritma Dijkstra menyelesaikan persoalan jalur terpendek yang dimulai dari suatu 
+    simpul melalui pendekatan greedy. Diberikan graf berarah dan berbobot 
+    $G = (V, E, W)$, yang mana setiap sisi memiliki bobot yang merupakan bilangan tak 
+    negatif dan simpul $s$ yang merupakan simpul awal. Algoritma Dijkstra menyimpan 
+    himpunan simpul $U$ yang mana untuk tiap simpul pada $U$, sudah ditentukan jalur 
+    terpendek dari $s$. Algoritma ini berulang kali mengambil sebuah simpul $a$ pada 
+    $V - U$ yang mempunyai jarak terpendek yang telah diestimasi lalu menambahkan $a$ 
+    ke himpunan $U$. Setelah itu, melakukan relaxation kepada semua sisi yang keluar 
+    dari $a$. Berikut adalah \textit{pseudocode} dari algoritma Dijkstra.
 
     \medskip
     \lstinputlisting[style=customc, mathescape=true]{codes/dijkstra.txt}
 
-    Kompleksitas waktu dari algoritma Dijkstra adalah $O(V^{2} + E)$. Ketika menggunakan struktur data seperti \textit{self-balancing binary search tree} 
-    atau \textit{heap} pada $U$ dan $V$, kompleksitas waktu dari algoritma ini dapat mencapai $O((V + E) * \log V)$.
+    Kompleksitas waktu dari algoritma Dijkstra adalah $O(V^{2} + E)$. Ketika menggunakan 
+    struktur data seperti \textit{self-balancing binary search tree} atau \textit{heap} 
+    pada $U$ dan $V$, kompleksitas waktu dari algoritma ini dapat mencapai 
+    $O((V + E) * \log V)$.
 
-    Algoritma Dijkstra dapat digunakan untuk mencari jalur terpendek setiap pasangan simpul pada graf, dengan memanggil fungsi Dijkstra untuk setiap simpul pada graf. 
+    Algoritma Dijkstra dapat digunakan untuk mencari jalur terpendek setiap pasangan 
+    simpul pada graf, dengan memanggil fungsi Dijkstra untuk setiap simpul pada graf. 
     Dalam hal tersebut kompleksitas waktunya adalah $O(V*(V + E)* \log V)$.
 
     \subsection{Algoritma Floyd-Warshall}
-    Algoritma Floyd-Warshall menggunakan pendekatan pemrograman dinamis dalam menemukan jalur terpendek untuk setiap pasangan simpul pada graf berarah dan 
-    berbobot $G = (V, E, W)$. Dalam menentukan jalur terpendek $(u,v)$, algoritma ini memperhatikan simpul intermediate, yaitu pada jalur 
-    $p = [v_{1}, v_{2}, v_{3}, ..., v_{n}]$, simpul intermediate adalah simpul yang bukan $v_{1}$ ataupun $v_{n}$. Algoritma ini bergantung pada observasi berikut. 
-    Misalkan $V = {1, 2, 3, ..., n}$ adalah simpul-simpul pada graf, $R = {1, 2, ..., k}$ adalah himpunan bagian dari $V$, untuk jalur terpendek dari 
-    setiap pasangan $(i, j)$ pada $V$ yang memiliki simpul intermediate dari $R$, dan $p$ adalah jalur terpendek dari pasangan-pasangan simpul tersebut. 
-    Hubungan dari $k$ dengan $p$ adalah sebagai berikut.
+    Algoritma Floyd-Warshall menggunakan pendekatan pemrograman dinamis dalam menemukan 
+    jalur terpendek untuk setiap pasangan simpul pada graf berarah dan berbobot 
+    $G = (V, E, W)$. Dalam menentukan jalur terpendek $(u,v)$, algoritma ini 
+    memperhatikan simpul intermediate, yaitu pada jalur 
+    $p = [v_{1}, v_{2}, v_{3}, ..., v_{n}]$, simpul intermediate adalah simpul yang 
+    bukan $v_{1}$ ataupun $v_{n}$. Algoritma ini bergantung pada observasi berikut. 
+    Misalkan $V = {1, 2, 3, ..., n}$ adalah simpul-simpul pada graf, $R = {1, 2, ..., k}$ 
+    adalah himpunan bagian dari $V$, untuk jalur terpendek dari setiap pasangan $(i, j)$ 
+    pada $V$ yang memiliki simpul intermediate dari $R$, dan $p$ adalah jalur terpendek 
+    dari pasangan-pasangan simpul tersebut. Hubungan dari $k$ dengan $p$ adalah sebagai 
+    berikut.
 
     \begin{enumerate}
         \item Jika $k$ bukan simpul intermediate dari $p$, maka simpul-simpul intermediate dari $p$ adalah $R’ = {1, 2, ..., k-1}$.
@@ -164,7 +222,9 @@ Dalam menentukan jalur terpendek maupun panjang jalur terpendek, terdapat bebera
         dan jalur terpendek $p^{(2)}$ dari $k$ ke $j$. Simpul-simpul intermediate dari $p^{(1)}$ dan $p^{(2)}$ adalah dari $R’ = {1, 2, ..., k-1}$.
     \end{enumerate}
 
-    Ketika $k$ bernilai 0, tidak ada simpul \textit{intermediate} pada $p$. Dari observasi di atas, dapat dibuat relasi rekurens untuk menghitung jalur terpendek dari $p$, yaitu
+    Ketika $k$ bernilai 0, tidak ada simpul \textit{intermediate} pada $p$. Dari 
+    observasi di atas, dapat dibuat relasi rekurens untuk menghitung jalur terpendek 
+    dari $p$, yaitu:
     \begin{equation}
         d_{i,j}^{(k)} =
         \begin{cases}

@@ -2,28 +2,35 @@
 
 \section{Latar Belakang}
 
-Pada zaman industri ini, logistik merupakan suatu kebutuhan yang penting. Terdapat banyak perusahaan yang menawarkan jasa penyaluran dan penyimpanan barang.
-Salah satunya adalah GOJEK yang memiliki sebuah business unit yang berfokus pada pengantaran barang yang dilakukan dengan menggunakan kendaraan truk.
+Pada zaman industri ini, logistik merupakan suatu kebutuhan yang penting. Terdapat banyak 
+perusahaan yang menawarkan jasa penyaluran dan penyimpanan barang. Salah satunya adalah 
+GOJEK yang memiliki sebuah business unit yang berfokus pada pengantaran barang yang 
+dilakukan dengan menggunakan kendaraan truk.
 
-Pada saat ini, dalam satu pesanan, perusahaan logistik tersebut melakukan sekali pengambilan (\textit{pickup}) dan pengantaran (\textit{drop off}) barang,
-sehingga satu rute pengantaran hanya melayani sebuah pesanan. Untuk meningkatkan efisiensi pengantaran, sebuah rute pengantaran dapat melayani beberapa pesanan sekaligus.
-Agar tercapainya efisiensi, diperlukan algoritma yang dapat menentukan rute terbaik dan tercepat.
+Pada saat ini, dalam satu pesanan, perusahaan logistik tersebut melakukan sekali pengambilan 
+(\textit{pickup}) dan pengantaran (\textit{drop off}) barang, sehingga satu rute pengantaran 
+hanya melayani sebuah pesanan. Untuk meningkatkan efisiensi pengantaran, sebuah rute 
+pengantaran dapat melayani beberapa pesanan sekaligus. Agar tercapainya efisiensi, 
+diperlukan algoritma yang dapat menentukan rute terbaik dan tercepat.
 
-Sebagai penggambaran permasalahan, pada gambar I.1, misalkan suatu graf tak berarah dengan $6$ buah simpul yang dilabeli dari $1$ sampai dengan $6$ dan $7$ 
-buah sisi dengan berat tiap sisinya adalah $1$.
-Sisi-sisi dari graf tersebut adalah $(1,2)$, $(2,3)$, $(1,4)$, $(2,5)$, $(3,6)$, $(4,5)$, dan $(5,6)$. Terdapat dua buah pesanan yang harus dilakukan. Pesanan ke-1 memiliki \textit{pickup},
-yang disimbolkan dengan $P1$, terletak pada simpul $1$ dan drop off, yang disimbolkan dengan $D1$, terletak pada simpul $6$. Pesanan ke-2 memiliki \textit{pickup}, yang
-disimbolkan dengan $P2$, terletak pada simpul $2$ dan \textit{drop off}, yang disimbolkan dengan $D2$, terletak pada simpul $3$.
+Sebagai penggambaran permasalahan, pada Gambar I.1, misalkan suatu graf tak berarah dengan 
+$6$ buah simpul yang dilabeli dari $1$ sampai dengan $6$ dan $7$ buah sisi dengan berat 
+tiap sisinya adalah $1$. Sisi-sisi dari graf tersebut adalah $(1,2)$, $(2,3)$, $(1,4)$, 
+$(2,5)$, $(3,6)$, $(4,5)$, dan $(5,6)$. Terdapat dua buah pesanan yang harus dilakukan. 
+Pesanan ke-1 memiliki \textit{pickup}, yang disimbolkan dengan $P1$, terletak pada simpul 
+$1$ dan drop off, yang disimbolkan dengan $D1$, terletak pada simpul $6$. Pesanan ke-2 
+memiliki \textit{pickup}, yang disimbolkan dengan $P2$, terletak pada simpul $2$ dan 
+\textit{drop off}, yang disimbolkan dengan $D2$, terletak pada simpul $3$.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=1.0\textwidth]{resources/graph_init.png}
-    \caption{Graf awal.}
+    \caption{Contoh tampilan antarmuka dari program}
 \end{figure}
 
-Pada umumnya kedua pesanan tersebut dilayani secara terpisah, contohnya pesanan satu memiliki rute $1-4-5-6$ 
-yang memiliki \textit{cost} sebesar $3$ dan pesanan dua memiliki rute $2-3$ dengan \textit{cost} sebesar $1$. 
-Hal tersebut diilustrasikan pada gambar I.2.
+Pada umumnya kedua pesanan tersebut dilayani secara terpisah, contohnya pesanan satu 
+memiliki rute $1-4-5-6$ yang memiliki \textit{cost} sebesar $3$ dan pesanan dua memiliki 
+rute $2-3$ dengan \textit{cost} sebesar $1$. Hal tersebut diilustrasikan pada Gambar I.2.
 
 \begin{figure}[H]
     \centering
@@ -31,10 +38,12 @@ Hal tersebut diilustrasikan pada gambar I.2.
     \caption{Graf yang memiliki rute 1-4-5-6 dan 2-3.}
 \end{figure}
 
-Namun, akan lebih efisien jika kedua pesanan tersebut dilakukan dalam sekali pengantaran seperti pada gambar I.3, sehingga 
-rute pengantarannya adalah $1-2-3-6$ dengan \textit{cost} sebesar $3$.
-Pada saat berada simpul 1, truk melakukan \textit{pickup}, lalu truk menuju simpul 2, dan melakukan \textit{pickup} barang pesanan ke-2. Setelah itu, truk menuju simpul 3
-dan menurunkan barang pesanan ke-2. Terakhir, truk menuju simpul 6  untuk melakukan \textit{drop off} pada barang pesanan ke-1.
+Namun, akan lebih efisien jika kedua pesanan tersebut dilakukan dalam sekali pengantaran 
+seperti pada Gambar I.3, sehingga rute pengantarannya adalah $1-2-3-6$ dengan \textit{cost} 
+sebesar $3$. Pada saat berada simpul 1, truk melakukan \textit{pickup}, lalu truk menuju 
+simpul 2, dan melakukan \textit{pickup} barang pesanan ke-2. Setelah itu, truk menuju simpul 3 
+dan menurunkan barang pesanan ke-2. Terakhir, truk menuju simpul 6  untuk melakukan 
+\textit{drop off} pada barang pesanan ke-1.
 
 \begin{figure}[H]
     \centering
@@ -52,7 +61,7 @@ Dari uraian tersebut, dapat dibentuk rumusan masalah sebagai berikut.
 \begin{enumerate}
     % \item Bagaimana algoritma yang efisien untuk menentukan rute terbaik agar satu atau lebih pesanan dapat diselesaikan dalam sebuah rute pengantaran dengan sumber daya yang terbatas.
     % \item Apa indikator pengukuran suatu rute pengantaran, sehingga dapat dibandingkan dengan rute pengantaran lainnya?
-    \item Bagaimana cara untuk menentukan rute pengantaran yang efisien sehingga dapat menyelesaikan satau atau lebih pengantaran?
+    \item Bagaimana cara untuk menentukan rute pengantaran yang efisien sehingga dapat menyelesaikan satu atau lebih pengantaran?
 \end{enumerate}
 
 \section{Tujuan}
