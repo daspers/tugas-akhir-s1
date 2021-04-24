@@ -1,6 +1,6 @@
 function get-path(u, P)
-    current_node = u
-    path = [current_node]
-    while P(current_node) is not NULL
-        current_node = P(current_node)
-        path = [current_node] + path
+  current_node = u
+  path = [current_node]
+  while P(current_node) is not NULL
+    current_node = P(current_node)
+    path = [current_node] + path

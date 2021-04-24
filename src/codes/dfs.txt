@@ -1,5 +1,5 @@
 function dfs(G, s, visited-nodes = {})
-    add s to visited-nodes
-    for each edge(s, u) in graph G
-        if u not in visited-nodes then
-            dfs(G, s, visited-nodes)
+  add s to visited-nodes
+  for each edge(s, u) in graph G
+    if u not in visited-nodes then
+      dfs(G, s, visited-nodes)

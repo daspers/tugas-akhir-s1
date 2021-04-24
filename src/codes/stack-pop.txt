@@ -1,7 +1,7 @@
 function pop(S)
-    if is-empty(S) then
-        return NULL
-    else
-        result = S[S.top]
-        S.top = S.top - 1
-        return result
+  if is-empty(S) then
+    return NULL
+  else
+    result = S[S.top]
+    S.top = S.top - 1
+    return result

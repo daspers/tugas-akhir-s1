@@ -1,10 +1,10 @@
 function bfs(G, x)
-    visited-nodes = {}
-    Q = Queue
-    push or enqueue x into Q
-    while Q is not empty
-        v = pop or deque Q
-        for each edge(v, u) in graph G
-            if u is not in visited-nodes then
-                visited-nodes = visited-nodes $\cup$ {u}
-                push or enqueue u into Q
+  visited-nodes = {}
+  Q = Queue
+  push or enqueue x into Q
+  while Q is not empty
+    v = pop or deque Q
+    for each edge(v, u) in graph G
+      if u is not in visited-nodes then
+        visited-nodes = visited-nodes $\cup$ {u}
+        push or enqueue u into Q

@@ -1,10 +1,10 @@
 function Floyd-Warshal(G, s)
-    D = 3d array with initial value $\infty$ and size of (n+1, n, n)
-    P = array with initial value NULL and size of |G.V|
-    for each edge(u, v) in graph G
-        D(0, u, v) = G.W(edge(u, v))
-    for k = 1 to n
-        for i = 1 to n
-            for j = 1 to n
-                D(k, i, j) = min(D(k, i, j), D(k-1, i, k) + D(k-1, k, j))
-    return D(n)
+  D = 3d array with initial value $\infty$ and size of (n+1, n, n)
+  P = array with initial value NULL and size of |G.V|
+  for each edge(u, v) in graph G
+    D(0, u, v) = G.W(edge(u, v))
+  for k = 1 to n
+    for i = 1 to n
+      for j = 1 to n
+        D(k, i, j) = min(D(k, i, j), D(k-1, i, k) + D(k-1, k, j))
+  return D(n)

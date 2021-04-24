@@ -1,9 +1,9 @@
 function Bellman-Ford(G, P, D, s)
-    init-single-source(G, P, D, s)
-    for i=0 to |G.V|-1
-        for each edge(u,v) in graph G
-        relax(u, v, D, P, G.W(edge(u,v)))
-    for each edge(u, v) in graph G
-        if D(v) > D(u) + G.W(edge(u,v)) then
-        return false
-    return true
+  init-single-source(G, P, D, s)
+  for i=0 to |G.V|-1
+    for each edge(u,v) in graph G
+    relax(u, v, D, P, G.W(edge(u,v)))
+  for each edge(u, v) in graph G
+    if D(v) > D(u) + G.W(edge(u,v)) then
+    return false
+  return true

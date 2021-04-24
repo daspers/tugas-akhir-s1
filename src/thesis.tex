@@ -33,8 +33,8 @@
     \pagenumbering{roman}
     \setcounter{page}{0}
 
-    \input{chapters/cover}
-    \input{chapters/approval}
+    % \input{chapters/cover}
+    % \input{chapters/approval}
     % \input{chapters/statement}
 
     \pagestyle{plain}
@@ -45,19 +45,19 @@
 
     \titleformat*{\section}{\centering\bfseries\Large\MakeUpperCase}
 
-    \newpage
-    \phantomsection
-    \addcontentsline{toc}{chapter}{\contentsname}
-    \tableofcontents
-    \newpage
-    \phantomsection
-    \addcontentsline{toc}{chapter}{\listfigurename}
-    \listoffigures
-    \newpage
-    \phantomsection
-    \addcontentsline{toc}{chapter}{\listtablename}
-    \listoftables
-    \clearpage
+    % \newpage
+    % \phantomsection
+    % \addcontentsline{toc}{chapter}{\contentsname}
+    % \tableofcontents
+    % \newpage
+    % \phantomsection
+    % \addcontentsline{toc}{chapter}{\listfigurename}
+    % \listoffigures
+    % \newpage
+    % \phantomsection
+    % \addcontentsline{toc}{chapter}{\listtablename}
+    % \listoftables
+    % \clearpage
 
     \titleformat*{\section}{\bfseries\normalsize}
     \titleformat*{\subsection}{\bfseries\normalsize}
@@ -80,17 +80,18 @@
     % Dafter Bab
     % Untuk menambahkan daftar bab, buat berkas bab misalnya `chapter-6` di direktori `chapters`, dan masukkan ke sini.
     %----------------------------------------------------------------%
-    \input{chapters/chapter-1}
-    \input{chapters/chapter-2}
+    % \input{chapters/chapter-1}
+    % \input{chapters/chapter-2}
+    \addtocounter{chapter}{2}
     \input{chapters/chapter-3}
     % \input{chapters/chapter-4}
     % \input{chapters/chapter-5}
     %----------------------------------------------------------------%
 
     % Daftar pustaka
-    \nocite{*}
-    \printbibliography[title=Daftar Pustaka]
-    \addcontentsline{toc}{chapter}{Daftar Pustaka}
+    % \nocite{*}
+    % \printbibliography[title=Daftar Pustaka]
+    % \addcontentsline{toc}{chapter}{Daftar Pustaka}
 
     % Index
     % \appendix
