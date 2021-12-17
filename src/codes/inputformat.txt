@@ -1,0 +1,6 @@
+number_of_nodes number_of_edges number_of_truck max_capacity_each_truck
+source_node dest_node edge_weight
+.... (number_of_edges times)
+number_of_orders
+pickup_node dropoff_node order_item_size
+.... (number_of_orders times)

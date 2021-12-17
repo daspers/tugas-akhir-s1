@@ -41,13 +41,30 @@ struct AdjacencyMatrix {
     }
 };
 
+struct ibitset {
+    uint val;
+
+    const bool operator[](std::size_t idx) const {
+        return idx < 32? val & (1<<idx) : 0;
+    }
+
+    void set(std::size_t idx, bool v) {
+        val ^= val & (1U << idx);
+        val |= ((uint)v << idx);
+    }
+
+    const bool get(std::size_t idx) const {
+        return idx < 32? val & (1<<idx) : 0;
+    }
+}
+
 
 int nodes, m;
 int trucks, cap;
 int orders;
 vector<vector<pair<int, int>>> adj;
 vector<Order> pesanan;
-vector<bool> done;
+ibitset done;
 vector<vector<pair<int,int>>> bestpaths;
 int bestdist;
 
@@ -110,44 +127,60 @@ int calculateDist(const AdjacencyMatrix &G, const vector<vector<pair<int,int>>> 
     return ans;
 }
 
-void solve(const AdjacencyMatrix &G, int rem, stack<int> &st, vector<pair<int,int>> &cpath, vector<vector<pair<int,int>>> &paths, int cm, int cc) {
-    if (rem == 0) {
-        paths.push_back(dropAll(cpath, st));
-        int dist = calculateDist(G, paths);
-        if (dist < bestdist) {
-            bestdist = dist;
-            bestpaths = paths;
+// map<int, int> ***dp;
+/*
+state1: 
+state2: 
+state3: 
+state4: the content of the container.
+*/
+vector<vector<vector<map<stack<int>, int>>> dp;
+long long cnt = 0;
+
+int solveDP(const AdjacencyMatrix &G, vector<int> &st, vector<pair<int,int>> &cpath, vector<vector<pair<int,int>>> &paths, int ct, int cc) {
+    auto& mep = dp[done.val][ct][cc];
+    map<stack<int>, int>::iterator resit = mep.find(hash(st));
+    if (resit == mep.end()) {
+        cnt++;
+        if (done.val == (1 << orders)-1) {
+            paths.push_back(dropAll(cpath, st));
+            int dist = calculateDist(G, paths);
+            if (dist < bestdist) {
+                bestdist = dist;
+                bestpaths = paths;
+            }
+            paths.pop_back();
+            return;
         }
-        paths.pop_back();
-        return;
-    }
 
-    if (cm > 1 && cpath.size() > 0) {
-        stack<int> tst;
-        vector<pair<int,int>> tpath;
-        paths.push_back(dropAll(cpath, st));
-        solve(G, rem, tst, tpath, paths, cm-1, cap);
-        paths.pop_back();
-    }
+        if (ct > 1 && cpath.size() > 0) {
+            stack<int> tst;
+            vector<pair<int,int>> tpath;
+            paths.push_back(dropAll(cpath, st));
+            solve(G, tst, tpath, paths, ct-1, cap);
+            paths.pop_back();
+        }
 
-    for (int i=0;i<orders;++i) {
-        if (done[i] || pesanan[i].weight > cc) continue;
-        done[i] = true;
-        cpath.push_back({pesanan[i].source, i});
-        st.push(i);
-        solve(G, rem-1, st, cpath, paths, cm, cc-pesanan[i].weight);
-        done[i] = false;
-        cpath.pop_back();
-        st.pop();
-    }
+        for (int i=0;i<orders;++i) {
+            if (done[i] || pesanan[i].weight > cc) continue;
+            done[i] = true;
+            cpath.push_back({pesanan[i].source, i});
+            st.push(i);
+            solve(G, st, cpath, paths, ct, cc-pesanan[i].weight);
+            done[i] = false;
+            cpath.pop_back();
+            st.pop();
+        }
 
-    if(!st.empty()) {
-        int tmp = st.top(); st.pop();
-        cpath.push_back({pesanan[tmp].destination, tmp});
-        solve(G, rem, st, cpath, paths, cm, cc + pesanan[tmp].weight);
-        cpath.pop_back();
-        st.push(tmp);
+        if(!st.empty()) {
+            int tmp = st.top(); st.pop();
+            cpath.push_back({pesanan[tmp].destination, tmp});
+            solve(G, st, cpath, paths, ct, cc + pesanan[tmp].weight);
+            cpath.pop_back();
+            st.push(tmp);
+        }
     }
+    return resit->second;
 }
 
 int main(){
@@ -160,13 +193,12 @@ int main(){
         // G.addEdge(b, a, w);
     }
     cin >> orders;
-    for(int i=0;i<orders;++i){
+    for(int i=0;i<orders;++i){  
         int p,d,w;
         cin >> p >> d >> w;
         pesanan.push_back({p, d, w});
     }
     cout<<"done output"<<endl;
-    done = vector<bool>(orders, false);
     AdjacencyMatrix H = calculateAllShorthestPath(G);
     bestdist = INT_MAX;
     cout<<"done calculateAllShorthestPath"<<endl;
@@ -176,22 +208,17 @@ int main(){
     vector<vector<pair<int,int>>> tpaths;
     solve(H, orders, tst, tpath, tpaths, trucks, cap);
     cout<<"done solving"<<endl;
-    cout<<"orders:"<<endl;
+    cout<<"total distance: "<<bestdist<<endl;
     for (int i=0;i<orders;i++) {
         cout<<i<<": "<<pesanan[i].source<<" -> "<<pesanan[i].destination<<" ("<<pesanan[i].weight<<")"<<endl;
     }
-    cout<<"total distance: "<<bestdist<<endl;
-    cout<<"paths:"<<endl;
     for(const vector<pair<int,int>> & path: bestpaths) {
         int prev = 0;
-        int sum = 0;
         for(int i=0;i<path.size();++i) {
             if (i) {
                 cout<<" -("<<H.m[prev][path[i].first]<<")-> ";
             }
-            sum += pesanan[path[i].second].weight;
-            pesanan[path[i].second].weight = -pesanan[path[i].second].weight;
-            cout<<path[i].first<<"(o:"<<path[i].second<<",c:"<<sum<<")";
+            cout<<path[i].first<<"("<<path[i].second<<")";
             prev = path[i].first;
         }
         cout<<endl;
